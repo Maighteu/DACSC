@@ -130,6 +130,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named ServeurHopital
+
+# Build rule for target.
+ServeurHopital: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ServeurHopital
+.PHONY : ServeurHopital
+
+# fast build rule for target.
+ServeurHopital/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/build
+.PHONY : ServeurHopital/fast
+
+#=============================================================================
 # Target rules for targets named Cli
 
 # Build rule for target.
@@ -249,12 +262,40 @@ ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalClient.dir/build.make CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.cpp.s
 .PHONY : ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.cpp.s
 
+MyQuerriesLibrary/sqlQuerry.o: MyQuerriesLibrary/sqlQuerry.cpp.o
+
+.PHONY : MyQuerriesLibrary/sqlQuerry.o
+
+# target to build an object file
+MyQuerriesLibrary/sqlQuerry.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/MyQuerriesLibrary/sqlQuerry.cpp.o
+.PHONY : MyQuerriesLibrary/sqlQuerry.cpp.o
+
+MyQuerriesLibrary/sqlQuerry.i: MyQuerriesLibrary/sqlQuerry.cpp.i
+
+.PHONY : MyQuerriesLibrary/sqlQuerry.i
+
+# target to preprocess a source file
+MyQuerriesLibrary/sqlQuerry.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/MyQuerriesLibrary/sqlQuerry.cpp.i
+.PHONY : MyQuerriesLibrary/sqlQuerry.cpp.i
+
+MyQuerriesLibrary/sqlQuerry.s: MyQuerriesLibrary/sqlQuerry.cpp.s
+
+.PHONY : MyQuerriesLibrary/sqlQuerry.s
+
+# target to generate assembly for a file
+MyQuerriesLibrary/sqlQuerry.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/MyQuerriesLibrary/sqlQuerry.cpp.s
+.PHONY : MyQuerriesLibrary/sqlQuerry.cpp.s
+
 MySocketLibrary/TCP.o: MySocketLibrary/TCP.cpp.o
 
 .PHONY : MySocketLibrary/TCP.o
 
 # target to build an object file
 MySocketLibrary/TCP.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/MySocketLibrary/TCP.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cli.dir/build.make CMakeFiles/Cli.dir/MySocketLibrary/TCP.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Serv.dir/build.make CMakeFiles/Serv.dir/MySocketLibrary/TCP.cpp.o
 .PHONY : MySocketLibrary/TCP.cpp.o
@@ -265,6 +306,7 @@ MySocketLibrary/TCP.i: MySocketLibrary/TCP.cpp.i
 
 # target to preprocess a source file
 MySocketLibrary/TCP.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/MySocketLibrary/TCP.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cli.dir/build.make CMakeFiles/Cli.dir/MySocketLibrary/TCP.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Serv.dir/build.make CMakeFiles/Serv.dir/MySocketLibrary/TCP.cpp.i
 .PHONY : MySocketLibrary/TCP.cpp.i
@@ -275,9 +317,37 @@ MySocketLibrary/TCP.s: MySocketLibrary/TCP.cpp.s
 
 # target to generate assembly for a file
 MySocketLibrary/TCP.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/MySocketLibrary/TCP.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cli.dir/build.make CMakeFiles/Cli.dir/MySocketLibrary/TCP.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Serv.dir/build.make CMakeFiles/Serv.dir/MySocketLibrary/TCP.cpp.s
 .PHONY : MySocketLibrary/TCP.cpp.s
+
+ServHopital/ServeurHopital.o: ServHopital/ServeurHopital.cpp.o
+
+.PHONY : ServHopital/ServeurHopital.o
+
+# target to build an object file
+ServHopital/ServeurHopital.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/ServHopital/ServeurHopital.cpp.o
+.PHONY : ServHopital/ServeurHopital.cpp.o
+
+ServHopital/ServeurHopital.i: ServHopital/ServeurHopital.cpp.i
+
+.PHONY : ServHopital/ServeurHopital.i
+
+# target to preprocess a source file
+ServHopital/ServeurHopital.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/ServHopital/ServeurHopital.cpp.i
+.PHONY : ServHopital/ServeurHopital.cpp.i
+
+ServHopital/ServeurHopital.s: ServHopital/ServeurHopital.cpp.s
+
+.PHONY : ServHopital/ServeurHopital.s
+
+# target to generate assembly for a file
+ServHopital/ServeurHopital.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/ServHopital/ServeurHopital.cpp.s
+.PHONY : ServHopital/ServeurHopital.cpp.s
 
 cli.o: cli.cpp.o
 
@@ -343,6 +413,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Cli"
 	@echo "... Serv"
+	@echo "... ServeurHopital"
 	@echo "... TerminalClient"
 	@echo "... ClientConsultationBookerQt/main.o"
 	@echo "... ClientConsultationBookerQt/main.i"
@@ -353,9 +424,15 @@ help:
 	@echo "... ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.o"
 	@echo "... ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.i"
 	@echo "... ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.s"
+	@echo "... MyQuerriesLibrary/sqlQuerry.o"
+	@echo "... MyQuerriesLibrary/sqlQuerry.i"
+	@echo "... MyQuerriesLibrary/sqlQuerry.s"
 	@echo "... MySocketLibrary/TCP.o"
 	@echo "... MySocketLibrary/TCP.i"
 	@echo "... MySocketLibrary/TCP.s"
+	@echo "... ServHopital/ServeurHopital.o"
+	@echo "... ServHopital/ServeurHopital.i"
+	@echo "... ServHopital/ServeurHopital.s"
 	@echo "... cli.o"
 	@echo "... cli.i"
 	@echo "... cli.s"

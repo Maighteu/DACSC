@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/student/Documents/DACSC/MySocketLibrary/TCP.cpp
-TCP.h
-/home/student/Documents/DACSC/MySocketLibrary/TCP.h
+/home/student/Documents/DACSC/ServHopital/ServeurHopital.cpp
+ServeurHopital.h
+/home/student/Documents/DACSC/ServHopital/ServeurHopital.h
 
-/home/student/Documents/DACSC/MySocketLibrary/TCP.h
+/home/student/Documents/DACSC/ServHopital/ServeurHopital.h
 stdio.h
 -
 unistd.h

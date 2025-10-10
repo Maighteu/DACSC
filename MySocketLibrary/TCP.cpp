@@ -5,7 +5,7 @@ int ServerSocket(int port)
 	int sockServListen;
 	struct addrinfo hints, *results;
 	char cPort[6];
-	snprintf(cPort, sizeof(port), "%d", port);
+	snprintf(cPort, sizeof(cPort), "%d", port);
 
 	//Création de la socket
 	/////////////////////////////////////////////////
@@ -145,7 +145,7 @@ int Receive(int sSocket,char* data)
 	int i = 0;
 	char reception[3]; // pour recup /r/r/n/0
 
-	while (boucle == true)
+	while (boucle)
 	{
 		if((data_received_lenght = recv(sSocket,reception,1,0))==-1)
 			return -1;
@@ -154,14 +154,14 @@ int Receive(int sSocket,char* data)
 
 		if (reception[0] == END_MARKER[0])
 		{
-			if((data_received_lenght = recv(sSocket,reception,1,0))==-1)
+			if((data_received_lenght = recv(sSocket,&reception[1],1,0))==-1)
 				return -1;
 			else if (data_received_lenght == 0)
 				return 0;
 
 			if (reception[1] == END_MARKER[1])
 			{
-				if((data_received_lenght = recv(sSocket,reception,1,0))==-1)
+				if((data_received_lenght = recv(sSocket,&reception[2],1,0))==-1)
 					return -1;
 				else if (data_received_lenght == 0)
 					return 0;
@@ -184,8 +184,9 @@ int Receive(int sSocket,char* data)
 		}
 		else data[i++] = reception[0];
 	}
+
 	data[i] = '\0';
 	fprintf(stderr, "Reception = %s\n", data);
-	return data_received_lenght - (ssize_t) strlen(END_MARKER);
+	return i;
 
 }

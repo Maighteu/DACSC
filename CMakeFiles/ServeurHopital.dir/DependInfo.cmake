@@ -4,8 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/student/Documents/DACSC/MySocketLibrary/TCP.cpp" "/home/student/Documents/DACSC/CMakeFiles/Serv.dir/MySocketLibrary/TCP.cpp.o"
-  "/home/student/Documents/DACSC/serv.cpp" "/home/student/Documents/DACSC/CMakeFiles/Serv.dir/serv.cpp.o"
+  "/home/student/Documents/DACSC/MyQuerriesLibrary/sqlQuerry.cpp" "/home/student/Documents/DACSC/CMakeFiles/ServeurHopital.dir/MyQuerriesLibrary/sqlQuerry.cpp.o"
+  "/home/student/Documents/DACSC/MySocketLibrary/TCP.cpp" "/home/student/Documents/DACSC/CMakeFiles/ServeurHopital.dir/MySocketLibrary/TCP.cpp.o"
+  "/home/student/Documents/DACSC/ServHopital/ServeurHopital.cpp" "/home/student/Documents/DACSC/CMakeFiles/ServeurHopital.dir/ServHopital/ServeurHopital.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

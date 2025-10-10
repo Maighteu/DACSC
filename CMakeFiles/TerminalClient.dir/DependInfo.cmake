@@ -21,6 +21,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "ClientConsultationBookerQt"
+  "MyQuerriesLibrary"
   "MySocketLibrary"
   "/usr/include/qt5"
   "/usr/include/qt5/QtCore"

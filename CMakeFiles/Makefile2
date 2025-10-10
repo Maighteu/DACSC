@@ -72,6 +72,7 @@ CMAKE_BINARY_DIR = /home/student/Documents/DACSC
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/ServeurHopital.dir/all
 all: CMakeFiles/Cli.dir/all
 all: CMakeFiles/TerminalClient.dir/all
 all: CMakeFiles/Serv.dir/all
@@ -84,11 +85,39 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/ServeurHopital.dir/clean
 clean: CMakeFiles/Cli.dir/clean
 clean: CMakeFiles/TerminalClient.dir/clean
 clean: CMakeFiles/Serv.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ServeurHopital.dir
+
+# All Build rule for target.
+CMakeFiles/ServeurHopital.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/student/Documents/DACSC/CMakeFiles --progress-num=7,8,9,10 "Built target ServeurHopital"
+.PHONY : CMakeFiles/ServeurHopital.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ServeurHopital.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/student/Documents/DACSC/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ServeurHopital.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/student/Documents/DACSC/CMakeFiles 0
+.PHONY : CMakeFiles/ServeurHopital.dir/rule
+
+# Convenience name for target.
+ServeurHopital: CMakeFiles/ServeurHopital.dir/rule
+
+.PHONY : ServeurHopital
+
+# clean rule for target.
+CMakeFiles/ServeurHopital.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/clean
+.PHONY : CMakeFiles/ServeurHopital.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/Cli.dir
@@ -124,7 +153,7 @@ CMakeFiles/Cli.dir/clean:
 CMakeFiles/TerminalClient.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalClient.dir/build.make CMakeFiles/TerminalClient.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalClient.dir/build.make CMakeFiles/TerminalClient.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/student/Documents/DACSC/CMakeFiles --progress-num=7,8,9,10 "Built target TerminalClient"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/student/Documents/DACSC/CMakeFiles --progress-num=11,12,13,14 "Built target TerminalClient"
 .PHONY : CMakeFiles/TerminalClient.dir/all
 
 # Build rule for subdir invocation for target.
