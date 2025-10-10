@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/student/Documents/DACSC/MySocketLibrary/TCP.c
+TCP.h
+/home/student/Documents/DACSC/MySocketLibrary/TCP.h
+
+/home/student/Documents/DACSC/MySocketLibrary/TCP.h
+stdio.h
+-
+unistd.h
+-
+stdlib.h
+-
+string.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+netdb.h
+-
+

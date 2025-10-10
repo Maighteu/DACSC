@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
 
-CXX_INCLUDES = -I/home/student/Documents/DACSC/ClientConsultationBookerQt -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtCore -isystem /usr/lib64/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5/QtGui -isystem /usr/include/qt5/QtWidgets
+CXX_INCLUDES = -I/home/student/Documents/DACSC/ClientConsultationBookerQt -I/home/student/Documents/DACSC/MySocketLibrary -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtCore -isystem /usr/lib64/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5/QtGui -isystem /usr/include/qt5/QtWidgets
 
 CXX_FLAGS = -fPIC -std=gnu++11
 

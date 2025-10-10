@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Serv.dir/serv.cpp.o CMakeFiles/Serv.dir/MySocketLibrary/TCP.cpp.o -o Serv 

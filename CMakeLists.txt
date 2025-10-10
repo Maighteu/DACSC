@@ -15,8 +15,30 @@ include_directories(ClientConsultationBookerQt)
 # Ajouter les fichiers sources automatiquement 
 file(GLOB SOURCES "ClientConsultationBookerQt/*.cpp") 
 
-# Ajouter l'exécutable
+# Ajouter l'exécutables
 add_executable(${PROJECT_NAME} ${SOURCES})
 
 # Lier les bibliothèques Qt nécessaires 
 target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Gui Qt5::Widgets) 
+
+
+include_directories(MySocketLibrary)
+
+# Fichiers C communs
+set(TCP_SOURCES MySocketLibrary/TCP.cpp)
+set(TCP_HEADERS MySocketLibrary/TCP.h)
+
+
+# -------- Executable Serv --------
+add_executable(Serv
+    serv.cpp
+    ${TCP_SOURCES}
+    ${TCP_HEADERS}
+)
+
+# -------- Executable Cli --------
+add_executable(Cli
+    cli.cpp
+    ${TCP_SOURCES}
+    ${TCP_HEADERS}
+)

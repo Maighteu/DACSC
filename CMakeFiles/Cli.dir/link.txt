@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Cli.dir/cli.cpp.o CMakeFiles/Cli.dir/MySocketLibrary/TCP.cpp.o -o Cli 

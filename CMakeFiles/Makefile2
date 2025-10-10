@@ -72,7 +72,9 @@ CMAKE_BINARY_DIR = /home/student/Documents/DACSC
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/Cli.dir/all
 all: CMakeFiles/TerminalClient.dir/all
+all: CMakeFiles/Serv.dir/all
 
 .PHONY : all
 
@@ -82,9 +84,38 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/Cli.dir/clean
 clean: CMakeFiles/TerminalClient.dir/clean
+clean: CMakeFiles/Serv.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Cli.dir
+
+# All Build rule for target.
+CMakeFiles/Cli.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cli.dir/build.make CMakeFiles/Cli.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cli.dir/build.make CMakeFiles/Cli.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/student/Documents/DACSC/CMakeFiles --progress-num=1,2,3 "Built target Cli"
+.PHONY : CMakeFiles/Cli.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Cli.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/student/Documents/DACSC/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Cli.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/student/Documents/DACSC/CMakeFiles 0
+.PHONY : CMakeFiles/Cli.dir/rule
+
+# Convenience name for target.
+Cli: CMakeFiles/Cli.dir/rule
+
+.PHONY : Cli
+
+# clean rule for target.
+CMakeFiles/Cli.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cli.dir/build.make CMakeFiles/Cli.dir/clean
+.PHONY : CMakeFiles/Cli.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/TerminalClient.dir
@@ -93,7 +124,7 @@ clean: CMakeFiles/TerminalClient.dir/clean
 CMakeFiles/TerminalClient.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalClient.dir/build.make CMakeFiles/TerminalClient.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalClient.dir/build.make CMakeFiles/TerminalClient.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/student/Documents/DACSC/CMakeFiles --progress-num=1,2,3,4 "Built target TerminalClient"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/student/Documents/DACSC/CMakeFiles --progress-num=7,8,9,10 "Built target TerminalClient"
 .PHONY : CMakeFiles/TerminalClient.dir/all
 
 # Build rule for subdir invocation for target.
@@ -112,6 +143,33 @@ TerminalClient: CMakeFiles/TerminalClient.dir/rule
 CMakeFiles/TerminalClient.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalClient.dir/build.make CMakeFiles/TerminalClient.dir/clean
 .PHONY : CMakeFiles/TerminalClient.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Serv.dir
+
+# All Build rule for target.
+CMakeFiles/Serv.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Serv.dir/build.make CMakeFiles/Serv.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Serv.dir/build.make CMakeFiles/Serv.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/student/Documents/DACSC/CMakeFiles --progress-num=4,5,6 "Built target Serv"
+.PHONY : CMakeFiles/Serv.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Serv.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/student/Documents/DACSC/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Serv.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/student/Documents/DACSC/CMakeFiles 0
+.PHONY : CMakeFiles/Serv.dir/rule
+
+# Convenience name for target.
+Serv: CMakeFiles/Serv.dir/rule
+
+.PHONY : Serv
+
+# clean rule for target.
+CMakeFiles/Serv.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Serv.dir/build.make CMakeFiles/Serv.dir/clean
+.PHONY : CMakeFiles/Serv.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

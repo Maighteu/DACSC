@@ -130,6 +130,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named Cli
+
+# Build rule for target.
+Cli: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Cli
+.PHONY : Cli
+
+# fast build rule for target.
+Cli/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cli.dir/build.make CMakeFiles/Cli.dir/build
+.PHONY : Cli/fast
+
+#=============================================================================
 # Target rules for targets named TerminalClient
 
 # Build rule for target.
@@ -141,6 +154,19 @@ TerminalClient: cmake_check_build_system
 TerminalClient/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalClient.dir/build.make CMakeFiles/TerminalClient.dir/build
 .PHONY : TerminalClient/fast
+
+#=============================================================================
+# Target rules for targets named Serv
+
+# Build rule for target.
+Serv: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Serv
+.PHONY : Serv
+
+# fast build rule for target.
+Serv/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Serv.dir/build.make CMakeFiles/Serv.dir/build
+.PHONY : Serv/fast
 
 ClientConsultationBookerQt/main.o: ClientConsultationBookerQt/main.cpp.o
 
@@ -223,6 +249,90 @@ ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalClient.dir/build.make CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.cpp.s
 .PHONY : ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.cpp.s
 
+MySocketLibrary/TCP.o: MySocketLibrary/TCP.cpp.o
+
+.PHONY : MySocketLibrary/TCP.o
+
+# target to build an object file
+MySocketLibrary/TCP.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cli.dir/build.make CMakeFiles/Cli.dir/MySocketLibrary/TCP.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Serv.dir/build.make CMakeFiles/Serv.dir/MySocketLibrary/TCP.cpp.o
+.PHONY : MySocketLibrary/TCP.cpp.o
+
+MySocketLibrary/TCP.i: MySocketLibrary/TCP.cpp.i
+
+.PHONY : MySocketLibrary/TCP.i
+
+# target to preprocess a source file
+MySocketLibrary/TCP.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cli.dir/build.make CMakeFiles/Cli.dir/MySocketLibrary/TCP.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Serv.dir/build.make CMakeFiles/Serv.dir/MySocketLibrary/TCP.cpp.i
+.PHONY : MySocketLibrary/TCP.cpp.i
+
+MySocketLibrary/TCP.s: MySocketLibrary/TCP.cpp.s
+
+.PHONY : MySocketLibrary/TCP.s
+
+# target to generate assembly for a file
+MySocketLibrary/TCP.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cli.dir/build.make CMakeFiles/Cli.dir/MySocketLibrary/TCP.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Serv.dir/build.make CMakeFiles/Serv.dir/MySocketLibrary/TCP.cpp.s
+.PHONY : MySocketLibrary/TCP.cpp.s
+
+cli.o: cli.cpp.o
+
+.PHONY : cli.o
+
+# target to build an object file
+cli.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cli.dir/build.make CMakeFiles/Cli.dir/cli.cpp.o
+.PHONY : cli.cpp.o
+
+cli.i: cli.cpp.i
+
+.PHONY : cli.i
+
+# target to preprocess a source file
+cli.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cli.dir/build.make CMakeFiles/Cli.dir/cli.cpp.i
+.PHONY : cli.cpp.i
+
+cli.s: cli.cpp.s
+
+.PHONY : cli.s
+
+# target to generate assembly for a file
+cli.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cli.dir/build.make CMakeFiles/Cli.dir/cli.cpp.s
+.PHONY : cli.cpp.s
+
+serv.o: serv.cpp.o
+
+.PHONY : serv.o
+
+# target to build an object file
+serv.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Serv.dir/build.make CMakeFiles/Serv.dir/serv.cpp.o
+.PHONY : serv.cpp.o
+
+serv.i: serv.cpp.i
+
+.PHONY : serv.i
+
+# target to preprocess a source file
+serv.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Serv.dir/build.make CMakeFiles/Serv.dir/serv.cpp.i
+.PHONY : serv.cpp.i
+
+serv.s: serv.cpp.s
+
+.PHONY : serv.s
+
+# target to generate assembly for a file
+serv.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Serv.dir/build.make CMakeFiles/Serv.dir/serv.cpp.s
+.PHONY : serv.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -231,6 +341,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Cli"
+	@echo "... Serv"
 	@echo "... TerminalClient"
 	@echo "... ClientConsultationBookerQt/main.o"
 	@echo "... ClientConsultationBookerQt/main.i"
@@ -241,6 +353,15 @@ help:
 	@echo "... ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.o"
 	@echo "... ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.i"
 	@echo "... ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.s"
+	@echo "... MySocketLibrary/TCP.o"
+	@echo "... MySocketLibrary/TCP.i"
+	@echo "... MySocketLibrary/TCP.s"
+	@echo "... cli.o"
+	@echo "... cli.i"
+	@echo "... cli.s"
+	@echo "... serv.o"
+	@echo "... serv.i"
+	@echo "... serv.s"
 .PHONY : help
 
 
