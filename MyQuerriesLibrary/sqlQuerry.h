@@ -25,7 +25,7 @@ int AuthentifierPatient(const char *nom, const char *prenom,const int idPatient)
 //int AjouterConsulation(const int idClient, const int idSpecialite, const int idMedecin, const string date, const string heure, const string raison);
 int ReserverConsulation(const int idConsultation, const int idPatient, const char *raison);
 
-void rechercheConsultation(const char *Specialite, const char *Medecin, const char *dateDebut, const char *dateFin );
+void rechercheConsultation(char *reponse,const char *Specialite, const char *Medecin, const char *dateDebut, const char *dateFin );
 
 void obtenirMedecin(char *reponse);
 void obtenirSpecialite(char *reponse);

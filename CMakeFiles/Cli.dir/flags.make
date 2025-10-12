@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/student/Documents/DACSC/ClientConsultationBookerQt -I/home/student/Documents/DACSC/MyQuerriesLibrary -I/home/student/Documents/DACSC/MySocketLibrary
+CXX_INCLUDES = -I/home/student/Documents/DACSC/ClientConsultationBookerQt -I/home/student/Documents/DACSC/MyQuerriesLibrary -I/home/student/Documents/DACSC/MySocketLibrary -I/usr/include/mysql
 
 CXX_FLAGS = -std=gnu++11
 

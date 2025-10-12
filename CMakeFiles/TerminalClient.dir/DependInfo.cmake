@@ -23,6 +23,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "ClientConsultationBookerQt"
   "MyQuerriesLibrary"
   "MySocketLibrary"
+  "/usr/include/mysql"
   "/usr/include/qt5"
   "/usr/include/qt5/QtCore"
   "/usr/lib64/qt5/mkspecs/linux-g++"
