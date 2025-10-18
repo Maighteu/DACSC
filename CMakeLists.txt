@@ -38,10 +38,6 @@ set(TCP_HEADERS MySocketLibrary/TCP.h)
 find_library(MYSQL_LIB mysqlclient PATHS /usr/lib64/mysql)
 find_path(MYSQL_INCLUDE_DIR mysql.h PATHS /usr/include/mysql)
 
-# Vérifier si MySQL a été trouvé
-if (NOT MYSQL_LIB OR NOT MYSQL_INCLUDE_DIR)
-    message(FATAL_ERROR "MySQL library or include directory not found.")
-endif()
 
 # Ajouter le répertoire d'inclusion MySQL
 include_directories(${MYSQL_INCLUDE_DIR})
