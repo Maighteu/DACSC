@@ -59,6 +59,7 @@ int Accept(int sEcoute,char *ipClient)
   struct sockaddr_in adrClient; 
   socklen_t adrClientLen = sizeof(struct sockaddr_in); // struct taille binaire
   int sService;
+  
   // accept on socket serv
   /////////////////////////////////////
   if ((sService = accept(sEcoute, (struct sockaddr*)&adrClient, & adrClientLen)) == -1) //(struct sockaddr*) permet de cast sockaddr_in en sockaddr pour le compilateur

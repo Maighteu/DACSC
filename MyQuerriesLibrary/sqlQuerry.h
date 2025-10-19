@@ -22,8 +22,8 @@ MYSQL * ConnexionBD();
 int AjouterPatient(const char *nom, const char *prenom);
 int AuthentifierPatient(const char *nom, const char *prenom,const int idPatient);
 
-//int AjouterConsulation(const int idClient, const int idSpecialite, const int idMedecin, const string date, const string heure, const string raison);
-int ReserverConsulation(const int idConsultation, const int idPatient, const char *raison);
+//int AjouterConsulation(const int idSpecialite, const int idMedecin, const string date, const string heure);
+int ReserverConsulation(const char* idConsultation, const char* idPatient, const char *raison);
 
 void rechercheConsultation(char *reponse,const char *Specialite, const char *Medecin, const char *dateDebut, const char *dateFin );
 

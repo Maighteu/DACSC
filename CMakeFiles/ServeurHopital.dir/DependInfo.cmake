@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/student/Documents/DACSC/MyProtocolsLibrary/CBP.cpp" "/home/student/Documents/DACSC/CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.o"
   "/home/student/Documents/DACSC/MyQuerriesLibrary/sqlQuerry.cpp" "/home/student/Documents/DACSC/CMakeFiles/ServeurHopital.dir/MyQuerriesLibrary/sqlQuerry.cpp.o"
   "/home/student/Documents/DACSC/MySocketLibrary/TCP.cpp" "/home/student/Documents/DACSC/CMakeFiles/ServeurHopital.dir/MySocketLibrary/TCP.cpp.o"
   "/home/student/Documents/DACSC/ServHopital/ServeurHopital.cpp" "/home/student/Documents/DACSC/CMakeFiles/ServeurHopital.dir/ServHopital/ServeurHopital.cpp.o"

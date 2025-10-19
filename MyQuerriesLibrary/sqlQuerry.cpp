@@ -80,8 +80,8 @@ void rechercheConsultation(char *reponse, const char *specialite, const char *me
 	"WHERE specialties.name LIKE '%s' "
 	"AND doctors.last_name LIKE '%s' "
 	"AND doctors.first_name LIKE '%s' "
-	"AND patient_id IS NULL"
-	"AND date BETWEEN '%s' AND '%s'"
+	"AND patient_id IS NULL "
+	"AND date BETWEEN '%s' AND '%s' "
 	"ORDER BY date, hour;",specialite, nomMedecin, prenomMedecin, dateDebut, dateFin);
 	
 	if (mysql_query(connexion, requete))
@@ -117,14 +117,14 @@ void rechercheConsultation(char *reponse, const char *specialite, const char *me
 
 }
 
-int ReserverConsulation( const int idConsultation, const int idPatient, const char *raison)
+int ReserverConsulation( const char* idConsultation, const char* idPatient, const char *raison)
 {
 	MYSQL * connexion = ConnexionBD();
 	char requete[255];
 	sprintf(requete,
 	"UPDATE consultations "
-	"SET patient_id = '%d', reason = '%s' "
-	"WHERE id = '%d' "
+	"SET patient_id = '%s', reason = '%s' "
+	"WHERE id = '%s' "
 	"AND patient_id IS NULL",idPatient, raison ,idConsultation);
 	if (mysql_query(connexion, requete))
 	{
@@ -149,11 +149,13 @@ void obtenirMedecin(char *reponse)
 {
 	MYSQL * connexion = ConnexionBD();
 	char requete[255];
-	sprintf(requete,"SELECT CONCAT(first_name," ",last_name) FROM doctors ORDER BY first_name, last_name;");
+	sprintf(requete,"SELECT id, CONCAT(first_name,' ',last_name) FROM doctors ORDER BY first_name, last_name;");
 	reponse[0] = '\0';
 	    MYSQL_RES* resultat = mysql_store_result(connexion);
     if (resultat == NULL)
     {
+    	strcpy(reponse,"GET_DOCTORS#ko#");
+
         fprintf(stderr,"(ACCESBD) Erreur de récupération du résultat : %s\n",mysql_error(connexion));
         return ;
     }
@@ -163,7 +165,7 @@ void obtenirMedecin(char *reponse)
     while((ligne = mysql_fetch_row(resultat)))
     {
         char tempLigne[256];
-        sprintf(tempLigne, "%s#", ligne[0]);
+        sprintf(tempLigne, "%d#%s#", ligne[0], ligne[1]);
         strcat(reponse, tempLigne);
     }
 	mysql_free_result(resultat);
@@ -175,11 +177,12 @@ void obtenirSpecialite(char *reponse)
 {
 	MYSQL * connexion = ConnexionBD();
 	char requete[255];
-	sprintf(requete,"SELECT name FROM specialties ORDER BY name;");
+	sprintf(requete,"SELECT id, name FROM specialties ORDER BY name;");
 	reponse[0] = '\0';
 	MYSQL_RES* resultat = mysql_store_result(connexion);
     if (resultat == NULL)
     {
+    	strcpy(reponse,"GET_SPECIALTIES#ko#");
         fprintf(stderr,"(ACCESBD) Erreur de récupération du résultat : %s\n",mysql_error(connexion));
         return;
     }
@@ -188,7 +191,7 @@ void obtenirSpecialite(char *reponse)
     while((ligne = mysql_fetch_row(resultat)))
     {
         char tempLigne[256];
-        sprintf(tempLigne, "%s#", ligne[0]);
+        sprintf(tempLigne, "%d#%s#", ligne[0], ligne[1]);
         strcat(reponse, tempLigne);
     }
 	mysql_free_result(resultat);

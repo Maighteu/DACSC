@@ -19,6 +19,8 @@ file(GLOB SOURCES "ClientConsultationBookerQt/*.cpp")
 file(GLOB HEADERS "ClientConsultationBookerQt/*.h") 
 file(GLOB QUERY_SOURCES "MyQuerriesLibrary/*.cpp")
 file(GLOB QUERY_HEADERS "MyQuerriesLibrary/*.h")
+file(GLOB CBP_SOURCES "MyProtocolsLibrary/*.cpp")
+file(GLOB CBP_HEADERS "MyProtocolsLibrary/*.h")
 
 # Ajouter l'exécutables
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
@@ -49,6 +51,6 @@ add_executable(Serv serv.cpp ${TCP_SOURCES} ${TCP_HEADERS})
 add_executable(Cli cli.cpp ${TCP_SOURCES} ${TCP_HEADERS})
 
 #Executable ServeurHopital
-add_executable(ServeurHopital ServHopital/ServeurHopital.cpp ${TCP_SOURCES} ${TCP_HEADERS} ${QUERY_SOURCES} ${QUERY_HEADERS})
+add_executable(ServeurHopital ServHopital/ServeurHopital.cpp ${TCP_SOURCES} ${TCP_HEADERS} ${QUERY_SOURCES} ${QUERY_HEADERS} ${CBP_SOURCES} ${CBP_HEADERS})
 
 target_link_libraries(ServeurHopital ${MYSQL_LIB})

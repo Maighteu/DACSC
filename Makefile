@@ -262,6 +262,33 @@ ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalClient.dir/build.make CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.cpp.s
 .PHONY : ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.cpp.s
 
+MyProtocolsLibrary/CBP.o: MyProtocolsLibrary/CBP.cpp.o
+
+.PHONY : MyProtocolsLibrary/CBP.o
+
+# target to build an object file
+MyProtocolsLibrary/CBP.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.o
+.PHONY : MyProtocolsLibrary/CBP.cpp.o
+
+MyProtocolsLibrary/CBP.i: MyProtocolsLibrary/CBP.cpp.i
+
+.PHONY : MyProtocolsLibrary/CBP.i
+
+# target to preprocess a source file
+MyProtocolsLibrary/CBP.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.i
+.PHONY : MyProtocolsLibrary/CBP.cpp.i
+
+MyProtocolsLibrary/CBP.s: MyProtocolsLibrary/CBP.cpp.s
+
+.PHONY : MyProtocolsLibrary/CBP.s
+
+# target to generate assembly for a file
+MyProtocolsLibrary/CBP.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.s
+.PHONY : MyProtocolsLibrary/CBP.cpp.s
+
 MyQuerriesLibrary/sqlQuerry.o: MyQuerriesLibrary/sqlQuerry.cpp.o
 
 .PHONY : MyQuerriesLibrary/sqlQuerry.o
@@ -424,6 +451,9 @@ help:
 	@echo "... ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.o"
 	@echo "... ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.i"
 	@echo "... ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.s"
+	@echo "... MyProtocolsLibrary/CBP.o"
+	@echo "... MyProtocolsLibrary/CBP.i"
+	@echo "... MyProtocolsLibrary/CBP.s"
 	@echo "... MyQuerriesLibrary/sqlQuerry.o"
 	@echo "... MyQuerriesLibrary/sqlQuerry.i"
 	@echo "... MyQuerriesLibrary/sqlQuerry.s"

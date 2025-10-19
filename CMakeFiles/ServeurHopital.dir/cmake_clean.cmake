@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.o"
   "CMakeFiles/ServeurHopital.dir/MyQuerriesLibrary/sqlQuerry.cpp.o"
   "CMakeFiles/ServeurHopital.dir/MySocketLibrary/TCP.cpp.o"
   "CMakeFiles/ServeurHopital.dir/ServHopital/ServeurHopital.cpp.o"
