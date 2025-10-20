@@ -3,6 +3,7 @@
 
 CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.o: MyProtocolsLibrary/CBP.cpp
 CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.o: MyProtocolsLibrary/CBP.h
+CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.o: MyQuerriesLibrary/sqlQuerry.h
 CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.o: /usr/include/mysql/errmsg.h
 CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.o: /usr/include/mysql/field_types.h
 CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.o: /usr/include/mysql/my_command.h
@@ -15,7 +16,6 @@ CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.o: /usr/include/mysql/m
 CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.o: /usr/include/mysql/mysql_com.h
 CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.o: /usr/include/mysql/mysql_time.h
 CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.o: /usr/include/mysql/mysql_version.h
-CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.o: MyQuerriesLibrary/sqlQuerry.h
 
 CMakeFiles/ServeurHopital.dir/MyQuerriesLibrary/sqlQuerry.cpp.o: MyQuerriesLibrary/sqlQuerry.cpp
 CMakeFiles/ServeurHopital.dir/MyQuerriesLibrary/sqlQuerry.cpp.o: MyQuerriesLibrary/sqlQuerry.h
@@ -36,6 +36,7 @@ CMakeFiles/ServeurHopital.dir/MySocketLibrary/TCP.cpp.o: MySocketLibrary/TCP.cpp
 CMakeFiles/ServeurHopital.dir/MySocketLibrary/TCP.cpp.o: MySocketLibrary/TCP.h
 
 CMakeFiles/ServeurHopital.dir/ServHopital/ServeurHopital.cpp.o: MyProtocolsLibrary/CBP.h
+CMakeFiles/ServeurHopital.dir/ServHopital/ServeurHopital.cpp.o: MyQuerriesLibrary/sqlQuerry.h
 CMakeFiles/ServeurHopital.dir/ServHopital/ServeurHopital.cpp.o: MySocketLibrary/TCP.h
 CMakeFiles/ServeurHopital.dir/ServHopital/ServeurHopital.cpp.o: ServHopital/ServeurHopital.cpp
 CMakeFiles/ServeurHopital.dir/ServHopital/ServeurHopital.cpp.o: /usr/include/mysql/errmsg.h
@@ -50,5 +51,4 @@ CMakeFiles/ServeurHopital.dir/ServHopital/ServeurHopital.cpp.o: /usr/include/mys
 CMakeFiles/ServeurHopital.dir/ServHopital/ServeurHopital.cpp.o: /usr/include/mysql/mysql_com.h
 CMakeFiles/ServeurHopital.dir/ServHopital/ServeurHopital.cpp.o: /usr/include/mysql/mysql_time.h
 CMakeFiles/ServeurHopital.dir/ServHopital/ServeurHopital.cpp.o: /usr/include/mysql/mysql_version.h
-CMakeFiles/ServeurHopital.dir/ServHopital/ServeurHopital.cpp.o: MyQuerriesLibrary/sqlQuerry.h
 

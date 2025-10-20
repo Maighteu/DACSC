@@ -397,3 +397,31 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/student/Documents/DACSC/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_f7bf5/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f7bf5.dir/build.make CMakeFiles/cmTC_f7bf5.dir/build
+gmake[1] : on entre dans le répertoire « /home/student/Documents/DACSC/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_f7bf5.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_f7bf5.dir/CheckIncludeFile.c.o -c /home/student/Documents/DACSC/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_f7bf5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7bf5.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_f7bf5.dir/CheckIncludeFile.c.o -o cmTC_f7bf5 
+gmake[1] : on quitte le répertoire « /home/student/Documents/DACSC/CMakeFiles/CMakeTmp »
+
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/student/Documents/DACSC/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_a035d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a035d.dir/build.make CMakeFiles/cmTC_a035d.dir/build
+gmake[1] : on entre dans le répertoire « /home/student/Documents/DACSC/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_a035d.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_a035d.dir/CheckFunctionExists.c.o -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a035d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a035d.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_a035d.dir/CheckFunctionExists.c.o -o cmTC_a035d  -lpthread 
+gmake[1] : on quitte le répertoire « /home/student/Documents/DACSC/CMakeFiles/CMakeTmp »
+
+
+

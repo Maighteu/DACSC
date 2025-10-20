@@ -4,6 +4,7 @@
 CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.o
  /home/student/Documents/DACSC/MyProtocolsLibrary/CBP.cpp
  /home/student/Documents/DACSC/MyProtocolsLibrary/CBP.h
+ /home/student/Documents/DACSC/MyQuerriesLibrary/sqlQuerry.h
  /usr/include/mysql/errmsg.h
  /usr/include/mysql/field_types.h
  /usr/include/mysql/my_command.h
@@ -16,7 +17,6 @@ CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.o
  /usr/include/mysql/mysql_com.h
  /usr/include/mysql/mysql_time.h
  /usr/include/mysql/mysql_version.h
- MyQuerriesLibrary/sqlQuerry.h
 CMakeFiles/ServeurHopital.dir/MyQuerriesLibrary/sqlQuerry.cpp.o
  /home/student/Documents/DACSC/MyQuerriesLibrary/sqlQuerry.cpp
  /home/student/Documents/DACSC/MyQuerriesLibrary/sqlQuerry.h
@@ -37,6 +37,7 @@ CMakeFiles/ServeurHopital.dir/MySocketLibrary/TCP.cpp.o
  /home/student/Documents/DACSC/MySocketLibrary/TCP.h
 CMakeFiles/ServeurHopital.dir/ServHopital/ServeurHopital.cpp.o
  /home/student/Documents/DACSC/MyProtocolsLibrary/CBP.h
+ /home/student/Documents/DACSC/MyQuerriesLibrary/sqlQuerry.h
  /home/student/Documents/DACSC/MySocketLibrary/TCP.h
  /home/student/Documents/DACSC/ServHopital/ServeurHopital.cpp
  /usr/include/mysql/errmsg.h
@@ -51,4 +52,3 @@ CMakeFiles/ServeurHopital.dir/ServHopital/ServeurHopital.cpp.o
  /usr/include/mysql/mysql_com.h
  /usr/include/mysql/mysql_time.h
  /usr/include/mysql/mysql_version.h
- MyQuerriesLibrary/sqlQuerry.h

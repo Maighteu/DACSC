@@ -13,12 +13,13 @@
 #include <iostream>
 #include <sstream>
 
+#include <fstream>
 
 #include "../MySocketLibrary/TCP.h"
 #include "../MyProtocolsLibrary/CBP.h"
 using namespace std;
 
-void handlerSigint(int s);
+void HandlerSigint(int s);
 void TraitementConnexion(int sService); 
 void* FctThreadClient(void* p); 
 
@@ -77,11 +78,13 @@ int main(int argc, char* argv[])
 
     // Lecture de la configuration
     ServerConfig config;
-    if (!readConfig("../Server/configServer.txt", config)) {
+    if (!readConfig("servConf.txt", config)) {
         return 1;
     }
 
     // Initialisation de la liste des sockets acceptées
+    pthread_mutex_init(&mutexSocketsAcceptees,NULL); 
+	pthread_cond_init(&condSocketsAcceptees,NULL); 
     for (int i=0 ; i<TAILLE_FILE_ATTENTE ; i++) 
         socketsAcceptees[i] = -1; 
 
@@ -166,6 +169,18 @@ void* FctThreadClient(void* p)
     } 
 } 
 
+void HandlerSigint(int s) 
+{ 
+    printf("\nArret du serveur.\n"); 
+    close(sEcoute); 
+    pthread_mutex_lock(&mutexSocketsAcceptees); 
+    for (int i=0 ; i<TAILLE_FILE_ATTENTE ; i++) 
+        if (socketsAcceptees[i] != -1) close(socketsAcceptees[i]); 
+    pthread_mutex_unlock(&mutexSocketsAcceptees); 
+    //SMOP_Close(); 
+    exit(0); 
+} 
+
 void TraitementConnexion(int sService) 
 { 
     char requete[200], reponse[200]; 
@@ -187,13 +202,13 @@ void TraitementConnexion(int sService)
         // ***** Fin de connexion ? ***** 
         if (nbLus == 0) 
         { 
-            cout << MAGENTA << "\t(TraitementConnexion) Fin de connexion du client." << RESET << endl;
+            cout <<"(TraitementConnexion) Fin de connexion du client." << endl;
             close(sService); 
             return; 
         } 
 
         requete[nbLus] = 0;  // Terminer proprement la chaîne
-        cout << MAGENTA << "\t(TraitementConnexion) Requête reçue = " << requete << RESET << endl;
+        cout << "(TraitementConnexion) Requête reçue = " << requete << endl;
 
 
         // ***** Traitement de la requête ***** 
@@ -207,18 +222,6 @@ void TraitementConnexion(int sService)
             HandlerSigint(0); 
         } 
 
-        cout << MAGENTA << "\t(TraitementConnexion) Réponse envoyée = " << reponse << RESET << endl;
+        cout << "(TraitementConnexion) Réponse envoyée = " << reponse<< endl;
     } 
 }
-
-void HandlerSigint(int s) 
-{ 
-    printf("\nArret du serveur.\n"); 
-    close(sEcoute); 
-    pthread_mutex_lock(&mutexSocketsAcceptees); 
-    for (int i=0 ; i<TAILLE_FILE_ATTENTE ; i++) 
-        if (socketsAcceptees[i] != -1) close(socketsAcceptees[i]); 
-    pthread_mutex_unlock(&mutexSocketsAcceptees); 
-    //SMOP_Close(); 
-    exit(0); 
-} 

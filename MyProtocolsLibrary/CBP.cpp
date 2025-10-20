@@ -99,7 +99,7 @@ int CBP_LOGIN(char* requete, char* saveptr)
 
 		buffer = strtok_r(NULL,"#",&saveptr);
 
-		if (strcmp(requete,"NEW") == 0)
+		if (strcmp(buffer,"NEW") == 0)
 		{
 			strcpy(nom, strtok_r(NULL,"#",&saveptr));
 			strcpy(prenom, strtok_r(NULL,"#",&saveptr));

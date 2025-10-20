@@ -29,18 +29,6 @@ MainWindowClientConsultationBooker::MainWindowClientConsultationBooker(QWidget *
     for (int col = 0; col < 5; ++col)
         ui->tableWidgetConsultations->setColumnWidth(col, columnWidths[col]);
 
-    // Exemples d'utilisation (à supprimer)
-    this->addTupleTableConsultations(1,"Neurologie","Martin Claire","2025-10-01", "09:00");
-    this->addTupleTableConsultations(2,"Cardiologie","Lemoine Bernard","2025-10-06", "10:15");
-    this->addTupleTableConsultations(3,"Dermatologie","Maboul Paul","2025-10-23", "14:30");
-
-    //this->addComboBoxSpecialties("--- TOUTES ---");
-    this->addComboBoxSpecialties("Dermatologie");
-    this->addComboBoxSpecialties("Cardiologie");
-
-    //this->addComboBoxDoctors("--- TOUS ---");
-    this->addComboBoxDoctors("Martin Claire");
-    this->addComboBoxDoctors("Maboul Paul");
 }
 
 MainWindowClientConsultationBooker::~MainWindowClientConsultationBooker()
@@ -248,6 +236,7 @@ int MainWindowClientConsultationBooker::dialogInputInt(const string& title,const
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void MainWindowClientConsultationBooker::on_pushButtonLogin_clicked()
 {
+    char requete [100];
     string lastName = this->getLastName();
     string firstName = this->getFirstName();
     int patientId = this->getPatientId();
@@ -257,12 +246,22 @@ void MainWindowClientConsultationBooker::on_pushButtonLogin_clicked()
     cout << "FirstName = " << firstName << endl;
     cout << "patientId = " << patientId << endl;
     cout << "newPatient = " << newPatient << endl;
+    if (newPatient == false)
+    {
+        sprintf(requete,"LOGIN#OLD#%d#%d#%s#", lastName, firstName, patientId);
+    }
+    else
+    {
+        sprintf(requete,"LOGIN#NEW#%d#%d#", lastName, firstName);
+
+    }
 
     loginOk();
 }
 
 void MainWindowClientConsultationBooker::on_pushButtonLogout_clicked()
 {
+    sprintf(requete,"LOGOUT#");
     logoutOk();
 }
 
@@ -277,11 +276,14 @@ void MainWindowClientConsultationBooker::on_pushButtonRechercher_clicked()
     cout << "doctor = " << doctor << endl;
     cout << "startDate = " << startDate << endl;
     cout << "endDate = " << endDate << endl;
+    sprintf(requete,"SEARCH_CONSULTATIONS#%s#%s#%s#%s#", specialty, doctor, startDate, endDate);
 }
 
 void MainWindowClientConsultationBooker::on_pushButtonReserver_clicked()
 {
     int selectedTow = this->getSelectionIndexTableConsultations();
-
+    sprintf(requete, "BOOK_CONSULTATIONS")   
     cout << "selectedRow = " << selectedTow << endl;
 }
+
+

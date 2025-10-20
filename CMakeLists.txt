@@ -53,4 +53,5 @@ add_executable(Cli cli.cpp ${TCP_SOURCES} ${TCP_HEADERS})
 #Executable ServeurHopital
 add_executable(ServeurHopital ServHopital/ServeurHopital.cpp ${TCP_SOURCES} ${TCP_HEADERS} ${QUERY_SOURCES} ${QUERY_HEADERS} ${CBP_SOURCES} ${CBP_HEADERS})
 
-target_link_libraries(ServeurHopital ${MYSQL_LIB})
+target_link_libraries(ServeurHopital ${MYSQL_LIB} pthread)
+

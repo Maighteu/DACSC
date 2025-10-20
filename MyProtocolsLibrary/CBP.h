@@ -1,6 +1,6 @@
 #ifndef CBP_H
 #define CBP_H
-#include "sqlQuerry.h"
+#include "../MyQuerriesLibrary/sqlQuerry.h"
 #include <list>
 #include <string>
 #include <pthread.h> 
