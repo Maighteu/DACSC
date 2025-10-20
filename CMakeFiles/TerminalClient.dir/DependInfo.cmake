@@ -7,6 +7,9 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/student/Documents/DACSC/ClientConsultationBookerQt/main.cpp" "/home/student/Documents/DACSC/CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/main.cpp.o"
   "/home/student/Documents/DACSC/ClientConsultationBookerQt/mainwindowclientconsultationbooker.cpp" "/home/student/Documents/DACSC/CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/mainwindowclientconsultationbooker.cpp.o"
   "/home/student/Documents/DACSC/ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.cpp" "/home/student/Documents/DACSC/CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.cpp.o"
+  "/home/student/Documents/DACSC/MyProtocolsLibrary/CBP.cpp" "/home/student/Documents/DACSC/CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o"
+  "/home/student/Documents/DACSC/MyQuerriesLibrary/sqlQuerry.cpp" "/home/student/Documents/DACSC/CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o"
+  "/home/student/Documents/DACSC/MySocketLibrary/TCP.cpp" "/home/student/Documents/DACSC/CMakeFiles/TerminalClient.dir/MySocketLibrary/TCP.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

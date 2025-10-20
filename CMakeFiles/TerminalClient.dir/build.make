@@ -115,11 +115,53 @@ CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/moc_mainwindowclientcon
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/student/Documents/DACSC/ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.cpp -o CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.cpp.s
 
+CMakeFiles/TerminalClient.dir/MySocketLibrary/TCP.cpp.o: CMakeFiles/TerminalClient.dir/flags.make
+CMakeFiles/TerminalClient.dir/MySocketLibrary/TCP.cpp.o: MySocketLibrary/TCP.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/student/Documents/DACSC/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TerminalClient.dir/MySocketLibrary/TCP.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TerminalClient.dir/MySocketLibrary/TCP.cpp.o -c /home/student/Documents/DACSC/MySocketLibrary/TCP.cpp
+
+CMakeFiles/TerminalClient.dir/MySocketLibrary/TCP.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TerminalClient.dir/MySocketLibrary/TCP.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/student/Documents/DACSC/MySocketLibrary/TCP.cpp > CMakeFiles/TerminalClient.dir/MySocketLibrary/TCP.cpp.i
+
+CMakeFiles/TerminalClient.dir/MySocketLibrary/TCP.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TerminalClient.dir/MySocketLibrary/TCP.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/student/Documents/DACSC/MySocketLibrary/TCP.cpp -o CMakeFiles/TerminalClient.dir/MySocketLibrary/TCP.cpp.s
+
+CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o: CMakeFiles/TerminalClient.dir/flags.make
+CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o: MyQuerriesLibrary/sqlQuerry.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/student/Documents/DACSC/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o -c /home/student/Documents/DACSC/MyQuerriesLibrary/sqlQuerry.cpp
+
+CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/student/Documents/DACSC/MyQuerriesLibrary/sqlQuerry.cpp > CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.i
+
+CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/student/Documents/DACSC/MyQuerriesLibrary/sqlQuerry.cpp -o CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.s
+
+CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o: CMakeFiles/TerminalClient.dir/flags.make
+CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o: MyProtocolsLibrary/CBP.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/student/Documents/DACSC/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o -c /home/student/Documents/DACSC/MyProtocolsLibrary/CBP.cpp
+
+CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/student/Documents/DACSC/MyProtocolsLibrary/CBP.cpp > CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.i
+
+CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/student/Documents/DACSC/MyProtocolsLibrary/CBP.cpp -o CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.s
+
 # Object files for target TerminalClient
 TerminalClient_OBJECTS = \
 "CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/main.cpp.o" \
 "CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/mainwindowclientconsultationbooker.cpp.o" \
-"CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.cpp.o"
+"CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.cpp.o" \
+"CMakeFiles/TerminalClient.dir/MySocketLibrary/TCP.cpp.o" \
+"CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o" \
+"CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o"
 
 # External object files for target TerminalClient
 TerminalClient_EXTERNAL_OBJECTS =
@@ -127,12 +169,16 @@ TerminalClient_EXTERNAL_OBJECTS =
 TerminalClient: CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/main.cpp.o
 TerminalClient: CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/mainwindowclientconsultationbooker.cpp.o
 TerminalClient: CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.cpp.o
+TerminalClient: CMakeFiles/TerminalClient.dir/MySocketLibrary/TCP.cpp.o
+TerminalClient: CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o
+TerminalClient: CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o
 TerminalClient: CMakeFiles/TerminalClient.dir/build.make
 TerminalClient: /usr/lib64/libQt5Widgets.so.5.12.5
+TerminalClient: /usr/lib64/mysql/libmysqlclient.so
 TerminalClient: /usr/lib64/libQt5Gui.so.5.12.5
 TerminalClient: /usr/lib64/libQt5Core.so.5.12.5
 TerminalClient: CMakeFiles/TerminalClient.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/student/Documents/DACSC/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable TerminalClient"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/student/Documents/DACSC/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable TerminalClient"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TerminalClient.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

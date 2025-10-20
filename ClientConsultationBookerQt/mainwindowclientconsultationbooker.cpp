@@ -3,7 +3,9 @@
 #include <QInputDialog>
 #include <QMessageBox>
 #include <iostream>
+#include "../MySocketLibrary/TCP.h"
 using namespace std;
+int sClient;
 
 MainWindowClientConsultationBooker::MainWindowClientConsultationBooker(QWidget *parent)
     : QMainWindow(parent)
@@ -28,6 +30,11 @@ MainWindowClientConsultationBooker::MainWindowClientConsultationBooker(QWidget *
     int columnWidths[] = {40, 150, 200, 150, 100};
     for (int col = 0; col < 5; ++col)
         ui->tableWidgetConsultations->setColumnWidth(col, columnWidths[col]);
+    if ((sClient = ClientSocket("192.168.253.129",50000)) == -1) 
+    { 
+        perror("Erreur de ClientSocket"); 
+        exit(1); 
+    }
 
 }
 
@@ -261,12 +268,16 @@ void MainWindowClientConsultationBooker::on_pushButtonLogin_clicked()
 
 void MainWindowClientConsultationBooker::on_pushButtonLogout_clicked()
 {
+    char requete [20];
+
     sprintf(requete,"LOGOUT#");
     logoutOk();
 }
 
 void MainWindowClientConsultationBooker::on_pushButtonRechercher_clicked()
 {
+    char requete [500];
+
     string specialty = this->getSelectionSpecialty();
     string doctor = this->getSelectionDoctor();
     string startDate = this->getStartDate();
@@ -281,8 +292,10 @@ void MainWindowClientConsultationBooker::on_pushButtonRechercher_clicked()
 
 void MainWindowClientConsultationBooker::on_pushButtonReserver_clicked()
 {
+     char requete [256];
+
     int selectedTow = this->getSelectionIndexTableConsultations();
-    sprintf(requete, "BOOK_CONSULTATIONS")   
+    sprintf(requete, "BOOK_CONSULTATIONS");
     cout << "selectedRow = " << selectedTow << endl;
 }
 

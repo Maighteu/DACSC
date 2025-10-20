@@ -122,6 +122,7 @@ CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/mainwindowclientconsult
  /home/student/Documents/DACSC/ClientConsultationBookerQt/mainwindowclientconsultationbooker.cpp
  /home/student/Documents/DACSC/ClientConsultationBookerQt/mainwindowclientconsultationbooker.h
  /home/student/Documents/DACSC/ClientConsultationBookerQt/ui_mainwindowclientconsultationbooker.h
+ /home/student/Documents/DACSC/MySocketLibrary/TCP.h
  /usr/include/qt5/QtCore/QDate
  /usr/include/qt5/QtCore/QVariant
  /usr/include/qt5/QtCore/qabstractitemmodel.h
@@ -401,3 +402,37 @@ CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/moc_mainwindowclientcon
  /usr/include/qt5/QtWidgets/qtwidgets-config.h
  /usr/include/qt5/QtWidgets/qtwidgetsglobal.h
  /usr/include/qt5/QtWidgets/qwidget.h
+CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o
+ /home/student/Documents/DACSC/MyProtocolsLibrary/CBP.cpp
+ /home/student/Documents/DACSC/MyProtocolsLibrary/CBP.h
+ /home/student/Documents/DACSC/MyQuerriesLibrary/sqlQuerry.h
+ /usr/include/mysql/errmsg.h
+ /usr/include/mysql/field_types.h
+ /usr/include/mysql/my_command.h
+ /usr/include/mysql/my_compress.h
+ /usr/include/mysql/my_list.h
+ /usr/include/mysql/mysql.h
+ /usr/include/mysql/mysql/client_plugin.h
+ /usr/include/mysql/mysql/plugin_auth_common.h
+ /usr/include/mysql/mysql/udf_registration_types.h
+ /usr/include/mysql/mysql_com.h
+ /usr/include/mysql/mysql_time.h
+ /usr/include/mysql/mysql_version.h
+CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o
+ /home/student/Documents/DACSC/MyQuerriesLibrary/sqlQuerry.cpp
+ /home/student/Documents/DACSC/MyQuerriesLibrary/sqlQuerry.h
+ /usr/include/mysql/errmsg.h
+ /usr/include/mysql/field_types.h
+ /usr/include/mysql/my_command.h
+ /usr/include/mysql/my_compress.h
+ /usr/include/mysql/my_list.h
+ /usr/include/mysql/mysql.h
+ /usr/include/mysql/mysql/client_plugin.h
+ /usr/include/mysql/mysql/plugin_auth_common.h
+ /usr/include/mysql/mysql/udf_registration_types.h
+ /usr/include/mysql/mysql_com.h
+ /usr/include/mysql/mysql_time.h
+ /usr/include/mysql/mysql_version.h
+CMakeFiles/TerminalClient.dir/MySocketLibrary/TCP.cpp.o
+ /home/student/Documents/DACSC/MySocketLibrary/TCP.cpp
+ /home/student/Documents/DACSC/MySocketLibrary/TCP.h

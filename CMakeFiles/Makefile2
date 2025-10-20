@@ -153,12 +153,12 @@ CMakeFiles/Cli.dir/clean:
 CMakeFiles/TerminalClient.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalClient.dir/build.make CMakeFiles/TerminalClient.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalClient.dir/build.make CMakeFiles/TerminalClient.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/student/Documents/DACSC/CMakeFiles --progress-num=12,13,14,15 "Built target TerminalClient"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/student/Documents/DACSC/CMakeFiles --progress-num=12,13,14,15,16,17,18 "Built target TerminalClient"
 .PHONY : CMakeFiles/TerminalClient.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/TerminalClient.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/student/Documents/DACSC/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/student/Documents/DACSC/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/TerminalClient.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/student/Documents/DACSC/CMakeFiles 0
 .PHONY : CMakeFiles/TerminalClient.dir/rule

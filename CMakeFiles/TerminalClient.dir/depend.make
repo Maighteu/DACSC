@@ -121,6 +121,7 @@ CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/main.cpp.o: /usr/includ
 CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/mainwindowclientconsultationbooker.cpp.o: ClientConsultationBookerQt/mainwindowclientconsultationbooker.cpp
 CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/mainwindowclientconsultationbooker.cpp.o: ClientConsultationBookerQt/mainwindowclientconsultationbooker.h
 CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/mainwindowclientconsultationbooker.cpp.o: ClientConsultationBookerQt/ui_mainwindowclientconsultationbooker.h
+CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/mainwindowclientconsultationbooker.cpp.o: MySocketLibrary/TCP.h
 CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/mainwindowclientconsultationbooker.cpp.o: /usr/include/qt5/QtCore/QDate
 CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/mainwindowclientconsultationbooker.cpp.o: /usr/include/qt5/QtCore/QVariant
 CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/mainwindowclientconsultationbooker.cpp.o: /usr/include/qt5/QtCore/qabstractitemmodel.h
@@ -400,4 +401,38 @@ CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/moc_mainwindowclientcon
 CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.cpp.o: /usr/include/qt5/QtWidgets/qtwidgets-config.h
 CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.cpp.o: /usr/include/qt5/QtWidgets/qtwidgetsglobal.h
 CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/moc_mainwindowclientconsultationbooker.cpp.o: /usr/include/qt5/QtWidgets/qwidget.h
+
+CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o: MyProtocolsLibrary/CBP.cpp
+CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o: MyProtocolsLibrary/CBP.h
+CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o: MyQuerriesLibrary/sqlQuerry.h
+CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o: /usr/include/mysql/errmsg.h
+CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o: /usr/include/mysql/field_types.h
+CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o: /usr/include/mysql/my_command.h
+CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o: /usr/include/mysql/my_compress.h
+CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o: /usr/include/mysql/my_list.h
+CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o: /usr/include/mysql/mysql.h
+CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o: /usr/include/mysql/mysql/client_plugin.h
+CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o: /usr/include/mysql/mysql/plugin_auth_common.h
+CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o: /usr/include/mysql/mysql/udf_registration_types.h
+CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o: /usr/include/mysql/mysql_com.h
+CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o: /usr/include/mysql/mysql_time.h
+CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o: /usr/include/mysql/mysql_version.h
+
+CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o: MyQuerriesLibrary/sqlQuerry.cpp
+CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o: MyQuerriesLibrary/sqlQuerry.h
+CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o: /usr/include/mysql/errmsg.h
+CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o: /usr/include/mysql/field_types.h
+CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o: /usr/include/mysql/my_command.h
+CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o: /usr/include/mysql/my_compress.h
+CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o: /usr/include/mysql/my_list.h
+CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o: /usr/include/mysql/mysql.h
+CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o: /usr/include/mysql/mysql/client_plugin.h
+CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o: /usr/include/mysql/mysql/plugin_auth_common.h
+CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o: /usr/include/mysql/mysql/udf_registration_types.h
+CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o: /usr/include/mysql/mysql_com.h
+CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o: /usr/include/mysql/mysql_time.h
+CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o: /usr/include/mysql/mysql_version.h
+
+CMakeFiles/TerminalClient.dir/MySocketLibrary/TCP.cpp.o: MySocketLibrary/TCP.cpp
+CMakeFiles/TerminalClient.dir/MySocketLibrary/TCP.cpp.o: MySocketLibrary/TCP.h
 

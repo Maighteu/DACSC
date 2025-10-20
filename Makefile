@@ -269,6 +269,7 @@ MyProtocolsLibrary/CBP.o: MyProtocolsLibrary/CBP.cpp.o
 # target to build an object file
 MyProtocolsLibrary/CBP.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalClient.dir/build.make CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.o
 .PHONY : MyProtocolsLibrary/CBP.cpp.o
 
 MyProtocolsLibrary/CBP.i: MyProtocolsLibrary/CBP.cpp.i
@@ -278,6 +279,7 @@ MyProtocolsLibrary/CBP.i: MyProtocolsLibrary/CBP.cpp.i
 # target to preprocess a source file
 MyProtocolsLibrary/CBP.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalClient.dir/build.make CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.i
 .PHONY : MyProtocolsLibrary/CBP.cpp.i
 
 MyProtocolsLibrary/CBP.s: MyProtocolsLibrary/CBP.cpp.s
@@ -287,6 +289,7 @@ MyProtocolsLibrary/CBP.s: MyProtocolsLibrary/CBP.cpp.s
 # target to generate assembly for a file
 MyProtocolsLibrary/CBP.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/MyProtocolsLibrary/CBP.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalClient.dir/build.make CMakeFiles/TerminalClient.dir/MyProtocolsLibrary/CBP.cpp.s
 .PHONY : MyProtocolsLibrary/CBP.cpp.s
 
 MyQuerriesLibrary/sqlQuerry.o: MyQuerriesLibrary/sqlQuerry.cpp.o
@@ -296,6 +299,7 @@ MyQuerriesLibrary/sqlQuerry.o: MyQuerriesLibrary/sqlQuerry.cpp.o
 # target to build an object file
 MyQuerriesLibrary/sqlQuerry.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/MyQuerriesLibrary/sqlQuerry.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalClient.dir/build.make CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.o
 .PHONY : MyQuerriesLibrary/sqlQuerry.cpp.o
 
 MyQuerriesLibrary/sqlQuerry.i: MyQuerriesLibrary/sqlQuerry.cpp.i
@@ -305,6 +309,7 @@ MyQuerriesLibrary/sqlQuerry.i: MyQuerriesLibrary/sqlQuerry.cpp.i
 # target to preprocess a source file
 MyQuerriesLibrary/sqlQuerry.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/MyQuerriesLibrary/sqlQuerry.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalClient.dir/build.make CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.i
 .PHONY : MyQuerriesLibrary/sqlQuerry.cpp.i
 
 MyQuerriesLibrary/sqlQuerry.s: MyQuerriesLibrary/sqlQuerry.cpp.s
@@ -314,6 +319,7 @@ MyQuerriesLibrary/sqlQuerry.s: MyQuerriesLibrary/sqlQuerry.cpp.s
 # target to generate assembly for a file
 MyQuerriesLibrary/sqlQuerry.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/MyQuerriesLibrary/sqlQuerry.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalClient.dir/build.make CMakeFiles/TerminalClient.dir/MyQuerriesLibrary/sqlQuerry.cpp.s
 .PHONY : MyQuerriesLibrary/sqlQuerry.cpp.s
 
 MySocketLibrary/TCP.o: MySocketLibrary/TCP.cpp.o
@@ -324,6 +330,7 @@ MySocketLibrary/TCP.o: MySocketLibrary/TCP.cpp.o
 MySocketLibrary/TCP.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/MySocketLibrary/TCP.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cli.dir/build.make CMakeFiles/Cli.dir/MySocketLibrary/TCP.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalClient.dir/build.make CMakeFiles/TerminalClient.dir/MySocketLibrary/TCP.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Serv.dir/build.make CMakeFiles/Serv.dir/MySocketLibrary/TCP.cpp.o
 .PHONY : MySocketLibrary/TCP.cpp.o
 
@@ -335,6 +342,7 @@ MySocketLibrary/TCP.i: MySocketLibrary/TCP.cpp.i
 MySocketLibrary/TCP.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/MySocketLibrary/TCP.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cli.dir/build.make CMakeFiles/Cli.dir/MySocketLibrary/TCP.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalClient.dir/build.make CMakeFiles/TerminalClient.dir/MySocketLibrary/TCP.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Serv.dir/build.make CMakeFiles/Serv.dir/MySocketLibrary/TCP.cpp.i
 .PHONY : MySocketLibrary/TCP.cpp.i
 
@@ -346,6 +354,7 @@ MySocketLibrary/TCP.s: MySocketLibrary/TCP.cpp.s
 MySocketLibrary/TCP.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ServeurHopital.dir/build.make CMakeFiles/ServeurHopital.dir/MySocketLibrary/TCP.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cli.dir/build.make CMakeFiles/Cli.dir/MySocketLibrary/TCP.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TerminalClient.dir/build.make CMakeFiles/TerminalClient.dir/MySocketLibrary/TCP.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Serv.dir/build.make CMakeFiles/Serv.dir/MySocketLibrary/TCP.cpp.s
 .PHONY : MySocketLibrary/TCP.cpp.s
 

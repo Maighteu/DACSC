@@ -12,6 +12,8 @@ find_package(Qt5 COMPONENTS Core Gui Widgets REQUIRED)
 
 include_directories(ClientConsultationBookerQt)
 include_directories(MyQuerriesLibrary)
+include_directories(MySocketLibrary)
+
 
 
 # Ajouter les fichiers sources automatiquement 
@@ -21,15 +23,6 @@ file(GLOB QUERY_SOURCES "MyQuerriesLibrary/*.cpp")
 file(GLOB QUERY_HEADERS "MyQuerriesLibrary/*.h")
 file(GLOB CBP_SOURCES "MyProtocolsLibrary/*.cpp")
 file(GLOB CBP_HEADERS "MyProtocolsLibrary/*.h")
-
-# Ajouter l'exécutables
-add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
-
-# Lier les bibliothèques Qt nécessaires 
-target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Gui Qt5::Widgets) 
-
-
-
 include_directories(MySocketLibrary)
 
 # Fichiers C communs
@@ -43,6 +36,17 @@ find_path(MYSQL_INCLUDE_DIR mysql.h PATHS /usr/include/mysql)
 
 # Ajouter le répertoire d'inclusion MySQL
 include_directories(${MYSQL_INCLUDE_DIR})
+
+# Ajouter l'exécutables
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS} ${TCP_SOURCES} ${TCP_HEADERS} ${QUERY_SOURCES} ${QUERY_HEADERS} ${CBP_SOURCES} ${CBP_HEADERS})
+
+# Lier les bibliothèques Qt nécessaires 
+target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Gui Qt5::Widgets) 
+target_link_libraries(${PROJECT_NAME} ${MYSQL_LIB})
+
+
+
+
 
 #Executable Serv
 add_executable(Serv serv.cpp ${TCP_SOURCES} ${TCP_HEADERS})
