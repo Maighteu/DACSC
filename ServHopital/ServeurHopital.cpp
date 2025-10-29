@@ -69,12 +69,7 @@ bool readConfig(const string& filename, ServerConfig& config)
 
 int main(int argc, char* argv[])
 {
-    if (argc != 2) 
-    {
-        printf("Erreur...\n"); 
-        printf("USAGE : Serveur portServeur\n"); 
-        exit(1);
-    }
+
 
     // Lecture de la configuration
     ServerConfig config;

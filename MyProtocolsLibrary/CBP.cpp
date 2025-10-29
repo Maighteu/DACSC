@@ -3,20 +3,28 @@
 
 int loggedClient[20];
 int nbClient = 0;
+int id;
 pthread_mutex_t mutexClients = PTHREAD_MUTEX_INITIALIZER; //macro qui evite le init
 
 bool CBP(char* requete, char* reponse, const int socket)
 {
+
 	char *saveptr;
-	char *buffer = strtok_r(requete,"#",&saveptr);
+	char brequete[250];
+	strcpy(brequete,requete);
+	char *buffer = strtok_r(brequete,"#",&saveptr);
+
+
+
+	// strtok va "effacer ce qui etait present precedemmnt"
 	//LOGIN
 	//////////////////////////////////////////////////////
-	if (strcmp(buffer,"LOGIN") == 0)
+	if (id = (strcmp(buffer,"LOGIN") == 0))
 	{
-		if (CBP_LOGIN(requete,saveptr) >=0)
+		if (CBP_LOGIN(requete) >=0)
 		{
 			ajout(socket);
-			sprintf(reponse, "LOGIN#ok#");
+			sprintf(reponse, "LOGIN#ok#%d#", id);
 			return true;
 		}
 
@@ -31,10 +39,6 @@ bool CBP(char* requete, char* reponse, const int socket)
 	/////////////////////////////
 	else if (strcmp(buffer,"LOGOUT") == 0)
 	{
-		int id;
-		buffer = strtok_r(NULL,"#",&saveptr);
-
-		id = stoi(string(strtok_r(NULL,"#",&saveptr)));
 
 		if (CBP_LOGOUT(socket))
 		{
@@ -90,19 +94,27 @@ bool CBP(char* requete, char* reponse, const int socket)
 	
  
 
-int CBP_LOGIN(char* requete, char* saveptr)
+int CBP_LOGIN(char* requete)
 {
-
+		char* saveptr;
 		char prenom[20], nom[20];
 		int id;
+		//on recup sans le LOGIN donc juste new#...
 		char* buffer = strtok_r(requete,"#",&saveptr);
+			printf("dans buffer post tok: %s \n", buffer);
+			buffer = strtok_r(NULL,"#",&saveptr);
+						printf("dans buffer post second tok: %s \n", buffer);
 
-		buffer = strtok_r(NULL,"#",&saveptr);
 
 		if (strcmp(buffer,"NEW") == 0)
 		{
+			printf("new started \n");
 			strcpy(nom, strtok_r(NULL,"#",&saveptr));
+						printf("nom copy \n");
+
 			strcpy(prenom, strtok_r(NULL,"#",&saveptr));
+									printf("prenom copy \n");
+
 
 			if((id=AjouterPatient(nom,prenom)) >= 0)
 			{	
@@ -115,6 +127,9 @@ int CBP_LOGIN(char* requete, char* saveptr)
 		}
 		else if (strcmp(buffer,"OLD") == 0)
 		{
+
+			printf("old started \n");
+
 			strcpy(nom, strtok_r(NULL,"#",&saveptr));
 			strcpy(prenom, strtok_r(NULL,"#",&saveptr));
 			id = atoi(strtok_r(NULL,"#",&saveptr));
@@ -128,6 +143,8 @@ int CBP_LOGIN(char* requete, char* saveptr)
 				return -2;
 			}
 		}
+		printf("nothing started \n");
+
 		return -3;
 }
 
@@ -181,9 +198,6 @@ void CBP_SEARCH_CONSULTATIONS(char*requete,char* reponse)
 	//ON la dans le champ reponse, il va donc servir "en ecriture et en lecture"
 
 	char* ptr = strtok_r(requete,"#", &saveptr);
-	if(strcmp(ptr,"GET_CONSULTATIONS")==0)
-	{
-		ptr = strtok_r(NULL,"#",&saveptr);
 		strcpy(specialite, ptr);
 		ptr = strtok_r(NULL,"#",&saveptr);
 		strcpy(medecin, ptr);
@@ -193,7 +207,7 @@ void CBP_SEARCH_CONSULTATIONS(char*requete,char* reponse)
 		strcpy(dateFin, ptr);
 		rechercheConsultation(buffer, specialite, medecin, dateDebut, dateFin );
 		strcpy(reponse,buffer);
-	}
+	
 }
 
 bool CBP_BOOK_CONSULTATIONS(char* buffer)
@@ -204,9 +218,6 @@ bool CBP_BOOK_CONSULTATIONS(char* buffer)
 	char *saveptr;
 
 	char* ptr = strtok_r(buffer,"#", &saveptr);
-	if(strcmp(ptr,"BOOK_CONSULTATIONS") == 0)
-	{
-		ptr = strtok_r(NULL,"#",&saveptr);
 		strcpy(idConsultation, ptr);
 		ptr = strtok_r(NULL,"#",&saveptr);
 		strcpy(idPatient, ptr);
@@ -217,8 +228,6 @@ bool CBP_BOOK_CONSULTATIONS(char* buffer)
 			return true;
 		}
 		else return false;
-	}
-	return false;
 }
 
 void CBP_CLOSE(const int socket)

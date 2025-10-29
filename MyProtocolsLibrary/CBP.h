@@ -32,7 +32,7 @@ bool CBP(char* requete, char* reponse, const int socket);
 
 // Gére LOGIN nvx user ou non et verifie accés unique ([thread] [-] [socket]
 // -> [thread] [userId] [socket], si userId pas déja présent)
-int CBP_LOGIN(char* buffer, char *saveptr);
+int CBP_LOGIN(char* buffer);
 
 //utilise l'ip pour retirer de la liste de connexion
 bool CBP_LOGOUT(const int id);

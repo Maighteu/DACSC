@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include <iostream>
 #include "../MySocketLibrary/TCP.h"
+#include <unistd.h>
 using namespace std;
 int sClient;
 
@@ -243,7 +244,8 @@ int MainWindowClientConsultationBooker::dialogInputInt(const string& title,const
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void MainWindowClientConsultationBooker::on_pushButtonLogin_clicked()
 {
-    char requete [100];
+    char requete [500], reponse[50];
+    char* buffer;
     string lastName = this->getLastName();
     string firstName = this->getFirstName();
     int patientId = this->getPatientId();
@@ -255,15 +257,25 @@ void MainWindowClientConsultationBooker::on_pushButtonLogin_clicked()
     cout << "newPatient = " << newPatient << endl;
     if (newPatient == false)
     {
-        sprintf(requete,"LOGIN#OLD#%d#%d#%s#", lastName, firstName, patientId);
+        sprintf(requete,"LOGIN#OLD#%s#%s#%d#", lastName.c_str(), firstName.c_str(), patientId);
     }
     else
     {
-        sprintf(requete,"LOGIN#NEW#%d#%d#", lastName, firstName);
+        sprintf(requete,"LOGIN#NEW#%s#%s#", lastName.c_str(), firstName.c_str());
+                printf("%s \n", requete);
 
     }
+    Echange(requete,reponse);
+    buffer = strtok(reponse,"#");
+    buffer = strtok(NULL,"#");
+    if (strcmp(buffer, "ok") == 0)
+    {
 
-    loginOk();
+       buffer = strtok(NULL,"#");
+       setPatientId(atoi(buffer));
+        loginOk();
+    }
+    else dialogError("Erreur de LOGIN","inserer autre LOGIN");
 }
 
 void MainWindowClientConsultationBooker::on_pushButtonLogout_clicked()
@@ -299,4 +311,26 @@ void MainWindowClientConsultationBooker::on_pushButtonReserver_clicked()
     cout << "selectedRow = " << selectedTow << endl;
 }
 
-
+void MainWindowClientConsultationBooker::Echange(char* requete, char* reponse)
+{
+    int byteLu;
+    if(Send(sClient,requete, strlen(requete)) == -1)
+    {
+        perror("erreur de send client, Send()");
+        ::close(sClient);
+        exit(1);
+    }
+    if((byteLu= Receive(sClient, reponse)) <0)
+    {
+        perror("erreur de receive client, Receive()");
+        ::close(sClient);
+        exit(1);
+    }
+    if (byteLu == 0)
+    {
+        cout<<"Connexion Fermee par le serveur, Receive()"<<endl;;
+        ::close(sClient);
+        exit(2);
+    }
+    cout<<"Echange Receive(): "<<reponse<<endl;
+}
