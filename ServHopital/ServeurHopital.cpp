@@ -178,7 +178,7 @@ void HandlerSigint(int s)
 
 void TraitementConnexion(int sService) 
 { 
-    char requete[200], reponse[200]; 
+    char requete[500], reponse[1000]; 
     int nbLus, nbEcrits; 
     bool onContinue = true; 
 

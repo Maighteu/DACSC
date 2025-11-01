@@ -25,7 +25,7 @@ int AjouterPatient(const char *nom, const char *prenom)
     	return -1;
 	}
 
-	int i = mysql_insert_id(connexion); // recup id pour l'aficher dans id déroulant
+	int i = mysql_insert_id(connexion); // recup id pour l'afficher dans id déroulant
 
 	mysql_close(connexion);
 	return i;
@@ -151,7 +151,13 @@ void obtenirMedecin(char *reponse)
 	char requete[255];
 	sprintf(requete,"SELECT id, CONCAT(first_name,' ',last_name) FROM doctors ORDER BY first_name, last_name;");
 	reponse[0] = '\0';
-	    MYSQL_RES* resultat = mysql_store_result(connexion);
+	if (mysql_query(connexion, requete))
+	{
+    	fprintf(stderr,"(ERROR)envoi requete bd echoue\n");
+    	mysql_close(connexion);
+    	return;
+	}
+	MYSQL_RES* resultat = mysql_store_result(connexion);
     if (resultat == NULL)
     {
     	strcpy(reponse,"GET_DOCTORS#ko#");
@@ -165,8 +171,9 @@ void obtenirMedecin(char *reponse)
     while((ligne = mysql_fetch_row(resultat)))
     {
         char tempLigne[256];
-        sprintf(tempLigne, "%d#%s#", ligne[0], ligne[1]);
+        sprintf(tempLigne, "%s#%s#", ligne[0], ligne[1]);
         strcat(reponse, tempLigne);
+        printf("\n %s \n", reponse);
     }
 	mysql_free_result(resultat);
     mysql_close(connexion);
@@ -179,6 +186,12 @@ void obtenirSpecialite(char *reponse)
 	char requete[255];
 	sprintf(requete,"SELECT id, name FROM specialties ORDER BY name;");
 	reponse[0] = '\0';
+	if (mysql_query(connexion, requete))
+	{
+    	fprintf(stderr,"(ERROR)envoi requete bd echoue\n");
+    	mysql_close(connexion);
+    	return;
+	}
 	MYSQL_RES* resultat = mysql_store_result(connexion);
     if (resultat == NULL)
     {
@@ -187,11 +200,12 @@ void obtenirSpecialite(char *reponse)
         return;
     }
 	strcpy(reponse,"GET_SPECIALTIES#ok#");
+	printf("specialite trouvée\n");
 	MYSQL_ROW ligne;
     while((ligne = mysql_fetch_row(resultat)))
     {
         char tempLigne[256];
-        sprintf(tempLigne, "%d#%s#", ligne[0], ligne[1]);
+        sprintf(tempLigne, "%s#%s#", ligne[0], ligne[1]);
         strcat(reponse, tempLigne);
     }
 	mysql_free_result(resultat);

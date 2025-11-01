@@ -1,4 +1,4 @@
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 #include <mysql.h>
 #include <time.h>
@@ -153,3 +153,73 @@ int main() {
   return 0;
 }
 
+*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <mysql.h>
+
+void finish_with_error(MYSQL *con) {
+    fprintf(stderr, "%s\n", mysql_error(con));
+    mysql_close(con);
+    exit(1);
+}
+
+int main() {
+    MYSQL *connexion = mysql_init(NULL);
+    if (!connexion) {
+        fprintf(stderr, "Erreur d'initialisation MySQL\n");
+        exit(1);
+    }
+
+    if (!mysql_real_connect(connexion, "localhost", "Student", "PassStudent1_", "PourStudent", 0, NULL, 0)) {
+        finish_with_error(connexion);
+    }
+
+    printf("✅ Connecté à la base de données.\n\n");
+
+    MYSQL_RES *result;
+    MYSQL_ROW row;
+
+    // ---- TABLE specialties ----
+    if (mysql_query(connexion, "SELECT id, name FROM specialties;")) {
+        finish_with_error(connexion);
+    }
+
+    result = mysql_store_result(connexion);
+    if (!result) finish_with_error(connexion);
+
+    printf("📘 TABLE : specialties\n");
+    printf("---------------------------------\n");
+    printf("%-5s | %-20s\n", "ID", "Nom");
+    printf("---------------------------------\n");
+
+    while ((row = mysql_fetch_row(result))) {
+        printf("%-5s | %-20s\n", row[0], row[1]);
+    }
+    mysql_free_result(result);
+
+    printf("\n");
+
+    // ---- TABLE doctors ----
+    if (mysql_query(connexion, "SELECT id, specialty_id, last_name, first_name FROM doctors;")) {
+        finish_with_error(connexion);
+    }
+
+    result = mysql_store_result(connexion);
+    if (!result) finish_with_error(connexion);
+
+    printf("🩺 TABLE : doctors\n");
+    printf("------------------------------------------------------\n");
+    printf("%-5s | %-12s | %-15s | %-15s\n", "ID", "Spécialité", "Nom", "Prénom");
+    printf("------------------------------------------------------\n");
+
+    while ((row = mysql_fetch_row(result))) {
+        printf("%-5s | %-12s | %-15s | %-15s\n", row[0], row[1], row[2], row[3]);
+    }
+    mysql_free_result(result);
+
+    printf("\n✅ Affichage terminé.\n");
+
+    mysql_close(connexion);
+    return 0;
+}

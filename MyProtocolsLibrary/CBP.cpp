@@ -8,9 +8,9 @@ pthread_mutex_t mutexClients = PTHREAD_MUTEX_INITIALIZER; //macro qui evite le i
 
 bool CBP(char* requete, char* reponse, const int socket)
 {
-
+	int idd;
 	char *saveptr;
-	char brequete[250];
+	char brequete[500];
 	strcpy(brequete,requete);
 	char *buffer = strtok_r(brequete,"#",&saveptr);
 
@@ -18,16 +18,19 @@ bool CBP(char* requete, char* reponse, const int socket)
 
 	// strtok va "effacer ce qui etait present precedemmnt"
 	//LOGIN
+	//TO DO retirer deco socket
 	//////////////////////////////////////////////////////
-	if (id = (strcmp(buffer,"LOGIN") == 0))
+	if (strcmp(buffer,"LOGIN") == 0)
 	{
-		if (CBP_LOGIN(requete) >=0)
-		{
+		idd =CBP_LOGIN(requete);
+		printf("\nidd pos: %d\n",idd);
+
+		if ( idd >0)
+		{	
 			ajout(socket);
-			sprintf(reponse, "LOGIN#ok#%d#", id);
+			sprintf(reponse, "LOGIN#ok#%d#", idd);
 			return true;
 		}
-
 		else
 		{
 			sprintf(reponse, "LOGIN#ko#");
@@ -101,16 +104,14 @@ int CBP_LOGIN(char* requete)
 		int id;
 		//on recup sans le LOGIN donc juste new#...
 		char* buffer = strtok_r(requete,"#",&saveptr);
-			printf("dans buffer post tok: %s \n", buffer);
-			buffer = strtok_r(NULL,"#",&saveptr);
-						printf("dans buffer post second tok: %s \n", buffer);
+		buffer = strtok_r(NULL,"#",&saveptr);
 
 
 		if (strcmp(buffer,"NEW") == 0)
 		{
 			printf("new started \n");
 			strcpy(nom, strtok_r(NULL,"#",&saveptr));
-						printf("nom copy \n");
+						printf("nom copy: nom\n");
 
 			strcpy(prenom, strtok_r(NULL,"#",&saveptr));
 									printf("prenom copy \n");
@@ -118,6 +119,7 @@ int CBP_LOGIN(char* requete)
 
 			if((id=AjouterPatient(nom,prenom)) >= 0)
 			{	
+				printf("%d", id);
 				return id;
 			}
 			else
@@ -133,8 +135,8 @@ int CBP_LOGIN(char* requete)
 			strcpy(nom, strtok_r(NULL,"#",&saveptr));
 			strcpy(prenom, strtok_r(NULL,"#",&saveptr));
 			id = atoi(strtok_r(NULL,"#",&saveptr));
-
-			if (AuthentifierPatient(nom, prenom, id) >=0)
+			id = AuthentifierPatient(nom, prenom, id);
+			if ( id >=0)
 			{
 				return id;
 			}

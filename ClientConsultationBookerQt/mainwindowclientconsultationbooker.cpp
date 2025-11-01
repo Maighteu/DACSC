@@ -36,6 +36,8 @@ MainWindowClientConsultationBooker::MainWindowClientConsultationBooker(QWidget *
         perror("Erreur de ClientSocket"); 
         exit(1); 
     }
+    addDoctors();
+    addSpecialties();
 
 }
 
@@ -333,4 +335,50 @@ void MainWindowClientConsultationBooker::Echange(char* requete, char* reponse)
         exit(2);
     }
     cout<<"Echange Receive(): "<<reponse<<endl;
+}
+
+void MainWindowClientConsultationBooker::addDoctors()
+{
+    char requete [100], reponse[500];
+    char* buffer;
+    sprintf(requete,"GET_DOCTORS");
+    Echange(requete, reponse);
+    //printf("%s\n", reponse);
+    buffer = strtok(reponse,"#");
+    if(strcmp(buffer, "GET_DOCTORS") ==0)
+    {
+        buffer = strtok(NULL, "#");
+        if(strcmp(buffer,"ok") == 0)
+        {
+            while(true)
+            {
+                buffer = strtok(NULL,"#");
+                if (buffer == NULL) break;
+                buffer = strtok(NULL,"#");
+                addComboBoxDoctors(buffer);
+            }
+        }
+
+    }
+    else
+    {
+        printf("\n Get_doctor non detecte");
+        return;
+    }
+}
+
+void MainWindowClientConsultationBooker::addSpecialties()
+{
+    char requete [100], reponse[500];
+    char * buffer;
+    sprintf(requete,"GET_SPECIALTIES");
+    Echange(requete, reponse);
+    //printf("%s\n", reponse);
+
+
+}
+
+void MainWindowClientConsultationBooker::addConsultations()
+{
+
 }

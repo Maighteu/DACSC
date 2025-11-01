@@ -50,6 +50,9 @@ public:
     string dialogInputText(const string& title,const string& question);
     int dialogInputInt(const string& title,const string& question);
     void Echange(char* requete, char* reponse);
+    void addDoctors();
+    void addSpecialties();
+    void addConsultations();
 
 
 

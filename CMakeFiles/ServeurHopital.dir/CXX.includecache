@@ -6,19 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/student/Documents/DACSC/MyProtocolsLibrary/CBP.cpp
-CBP.h
-/home/student/Documents/DACSC/MyProtocolsLibrary/CBP.h
-
-/home/student/Documents/DACSC/MyProtocolsLibrary/CBP.h
-../MyQuerriesLibrary/sqlQuerry.h
+/home/student/Documents/DACSC/MyQuerriesLibrary/sqlQuerry.cpp
+sqlQuerry.h
 /home/student/Documents/DACSC/MyQuerriesLibrary/sqlQuerry.h
-list
--
-string
--
-pthread.h
--
 
 /home/student/Documents/DACSC/MyQuerriesLibrary/sqlQuerry.h
 stdio.h
