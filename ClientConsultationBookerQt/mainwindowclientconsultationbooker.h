@@ -52,7 +52,7 @@ public:
     void Echange(char* requete, char* reponse);
     void addDoctors();
     void addSpecialties();
-    void addConsultations();
+    void addSearchConsultations();
 
 
 

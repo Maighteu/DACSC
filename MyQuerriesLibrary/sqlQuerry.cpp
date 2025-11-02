@@ -60,20 +60,41 @@ void rechercheConsultation(char *reponse, const char *specialite, const char *me
 	char *nomMedecin, *prenomMedecin;
 
     char temp[40];
+    printf("%s\n", medecin);
     strcpy(temp, medecin);
-
+    printf("pre print\n");
+    printf("\ntemp: %s\n", temp);
     char *token = strtok(temp, " ");
+	prenomMedecin = strdup(token);
+    if(strcmp(prenomMedecin, "%") ==0)
+    {
+    	printf("in if \n");
+	    strcpy(nomMedecin,"%");
+	}
+	else
+	{
+		token = strtok(NULL, " ");
+				printf("\n token: %s\n", token);
 
-    nomMedecin = strdup(token);
-    token = strtok(NULL, " ");
-    prenomMedecin = strdup(token);
+		nomMedecin = strdup(token);
+		printf("\n post token\n");
+	} 
+	printf("prenom: %s", prenomMedecin);
+	printf("nom: %s", nomMedecin);
+
+
+	printf("spe: %s\n\n", specialite);
+	printf("prenom: %s\n\n", prenomMedecin);
+	printf("nom: %s\n\n", nomMedecin);
+	printf("datedeb: %s\n\n", dateDebut);
+	printf("datefin: %s\n\n", dateFin);
 
 
 	MYSQL * connexion = ConnexionBD();
-	char requete[255];
+	char requete[500];
 	// utiliser '%' en sql pour afficher tout ce qui a 0,1,tout caractere
 	sprintf(requete,
-	"SELECT  id, specialties.name,CONCAT(doctors.first_name, ' ',doctors.last_name), date, hour "
+	"SELECT  consultations.id, specialties.name,CONCAT(doctors.first_name, ' ',doctors.last_name), date, hour "
 	"FROM consultations "
 	"INNER JOIN  doctors on doctors.id = consultations.doctor_id "
 	"INNER JOIN  specialties on specialties.id = doctors.specialty_id "
@@ -83,13 +104,19 @@ void rechercheConsultation(char *reponse, const char *specialite, const char *me
 	"AND patient_id IS NULL "
 	"AND date BETWEEN '%s' AND '%s' "
 	"ORDER BY date, hour;",specialite, nomMedecin, prenomMedecin, dateDebut, dateFin);
-	
+	printf("Requête SQL envoyée : [%s]\n", requete);
+printf("Longueur requête : %zu\n", strlen(requete));
+printf("Connexion pointer : %p\n", connexion);
+
 	if (mysql_query(connexion, requete))
 	{
     	fprintf(stderr,"(ERROR)envoi requete bd echoue\n");
+    	    fprintf(stderr, "(ERROR) envoi requete bd echoue : %s\n", mysql_error(connexion));
+
     	mysql_close(connexion);
     	return;
 	}
+		printf("\n request done \n");
 
 	MYSQL_RES* resultat = mysql_store_result(connexion);
 	if (resultat == NULL)
@@ -113,6 +140,7 @@ void rechercheConsultation(char *reponse, const char *specialite, const char *me
 
 	mysql_free_result(resultat);
     mysql_close(connexion);
+    printf("\n end found \n");
 	return;
 
 }

@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <mysql.h>
 #include <time.h>
@@ -51,7 +51,7 @@ DOCTOR doctors[] = {
 int nbDoctors = 6;
 
 PATIENT patients[] = {
-  {-1, "Durand", "Jean", "1980-05-12"},
+  {-1, "mv", "158", "1980-05-12"},
   {-1, "Petit", "Sophie", "1992-11-30"}
 };
 int nbPatients = 2;
@@ -153,73 +153,73 @@ int main() {
   return 0;
 }
 
-*/
-#include <stdio.h>
-#include <stdlib.h>
-#include <mysql.h>
 
-void finish_with_error(MYSQL *con) {
-    fprintf(stderr, "%s\n", mysql_error(con));
-    mysql_close(con);
-    exit(1);
-}
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <mysql.h>
 
-int main() {
-    MYSQL *connexion = mysql_init(NULL);
-    if (!connexion) {
-        fprintf(stderr, "Erreur d'initialisation MySQL\n");
-        exit(1);
-    }
+// void finish_with_error(MYSQL *con) {
+//     fprintf(stderr, "%s\n", mysql_error(con));
+//     mysql_close(con);
+//     exit(1);
+// }
 
-    if (!mysql_real_connect(connexion, "localhost", "Student", "PassStudent1_", "PourStudent", 0, NULL, 0)) {
-        finish_with_error(connexion);
-    }
+// int main() {
+//     MYSQL *connexion = mysql_init(NULL);
+//     if (!connexion) {
+//         fprintf(stderr, "Erreur d'initialisation MySQL\n");
+//         exit(1);
+//     }
 
-    printf("✅ Connecté à la base de données.\n\n");
+//     if (!mysql_real_connect(connexion, "localhost", "Student", "PassStudent1_", "PourStudent", 0, NULL, 0)) {
+//         finish_with_error(connexion);
+//     }
 
-    MYSQL_RES *result;
-    MYSQL_ROW row;
+//     printf("✅ Connecté à la base de données.\n\n");
 
-    // ---- TABLE specialties ----
-    if (mysql_query(connexion, "SELECT id, name FROM specialties;")) {
-        finish_with_error(connexion);
-    }
+//     MYSQL_RES *result;
+//     MYSQL_ROW row;
 
-    result = mysql_store_result(connexion);
-    if (!result) finish_with_error(connexion);
+//     // ---- TABLE specialties ----
+//     if (mysql_query(connexion, "SELECT id, name FROM specialties;")) {
+//         finish_with_error(connexion);
+//     }
 
-    printf("📘 TABLE : specialties\n");
-    printf("---------------------------------\n");
-    printf("%-5s | %-20s\n", "ID", "Nom");
-    printf("---------------------------------\n");
+//     result = mysql_store_result(connexion);
+//     if (!result) finish_with_error(connexion);
 
-    while ((row = mysql_fetch_row(result))) {
-        printf("%-5s | %-20s\n", row[0], row[1]);
-    }
-    mysql_free_result(result);
+//     printf("📘 TABLE : specialties\n");
+//     printf("---------------------------------\n");
+//     printf("%-5s | %-20s\n", "ID", "Nom");
+//     printf("---------------------------------\n");
 
-    printf("\n");
+//     while ((row = mysql_fetch_row(result))) {
+//         printf("%-5s | %-20s\n", row[0], row[1]);
+//     }
+//     mysql_free_result(result);
 
-    // ---- TABLE doctors ----
-    if (mysql_query(connexion, "SELECT id, specialty_id, last_name, first_name FROM doctors;")) {
-        finish_with_error(connexion);
-    }
+//     printf("\n");
 
-    result = mysql_store_result(connexion);
-    if (!result) finish_with_error(connexion);
+//     // ---- TABLE doctors ----
+//     if (mysql_query(connexion, "SELECT id, specialty_id, last_name, first_name FROM doctors;")) {
+//         finish_with_error(connexion);
+//     }
 
-    printf("🩺 TABLE : doctors\n");
-    printf("------------------------------------------------------\n");
-    printf("%-5s | %-12s | %-15s | %-15s\n", "ID", "Spécialité", "Nom", "Prénom");
-    printf("------------------------------------------------------\n");
+//     result = mysql_store_result(connexion);
+//     if (!result) finish_with_error(connexion);
 
-    while ((row = mysql_fetch_row(result))) {
-        printf("%-5s | %-12s | %-15s | %-15s\n", row[0], row[1], row[2], row[3]);
-    }
-    mysql_free_result(result);
+//     printf("🩺 TABLE : doctors\n");
+//     printf("------------------------------------------------------\n");
+//     printf("%-5s | %-12s | %-15s | %-15s\n", "ID", "Spécialité", "Nom", "Prénom");
+//     printf("------------------------------------------------------\n");
 
-    printf("\n✅ Affichage terminé.\n");
+//     while ((row = mysql_fetch_row(result))) {
+//         printf("%-5s | %-12s | %-15s | %-15s\n", row[0], row[1], row[2], row[3]);
+//     }
+//     mysql_free_result(result);
 
-    mysql_close(connexion);
-    return 0;
-}
+//     printf("\n✅ Affichage terminé.\n");
+
+//     mysql_close(connexion);
+//     return 0;
+// }

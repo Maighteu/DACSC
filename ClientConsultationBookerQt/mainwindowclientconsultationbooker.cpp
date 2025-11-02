@@ -301,7 +301,7 @@ void MainWindowClientConsultationBooker::on_pushButtonRechercher_clicked()
     cout << "doctor = " << doctor << endl;
     cout << "startDate = " << startDate << endl;
     cout << "endDate = " << endDate << endl;
-    sprintf(requete,"SEARCH_CONSULTATIONS#%s#%s#%s#%s#", specialty, doctor, startDate, endDate);
+    addSearchConsultations();
 }
 
 void MainWindowClientConsultationBooker::on_pushButtonReserver_clicked()
@@ -358,7 +358,6 @@ void MainWindowClientConsultationBooker::addDoctors()
                 addComboBoxDoctors(buffer);
             }
         }
-
     }
     else
     {
@@ -374,11 +373,42 @@ void MainWindowClientConsultationBooker::addSpecialties()
     sprintf(requete,"GET_SPECIALTIES");
     Echange(requete, reponse);
     //printf("%s\n", reponse);
-
+    buffer = strtok(reponse, "#");
+    if (strcmp(buffer, "GET_SPECIALTIES") == 0)
+    {
+        buffer = strtok(NULL, "#");
+        if(strcmp(buffer, "ok") == 0)
+        {
+            while(true)
+            {
+                buffer = strtok(NULL, "#");
+                if (buffer == NULL) break;
+                buffer = strtok(NULL, "#");
+                addComboBoxSpecialties(buffer);
+            }
+        }
+    }
+    else
+    {
+        printf("\n GET_SPECIALTIES non detecte");
+        return;
+    }
 
 }
 
-void MainWindowClientConsultationBooker::addConsultations()
+void MainWindowClientConsultationBooker::addSearchConsultations()
 {
+     char requete [200], reponse[800];
+    char specialite[20], docteur[30], datedeb[12],datefin[12];
+    char* buffer;
+    strcpy(specialite, getSelectionSpecialty().c_str());
+    strcpy(docteur, getSelectionDoctor().c_str());
+    strcpy(datedeb, getStartDate().c_str());
+    strcpy(datefin, getEndDate().c_str());
+    if (strcmp(docteur ,"--- TOUS ---") == 0) strcpy(docteur,"%");
+    if (strcmp(specialite ,"--- TOUTES ---") == 0) strcpy(specialite,"%");
+
+    sprintf(requete, "SEARCH_CONSULTATIONS#%s#%s#%s#%s#", specialite, docteur, datedeb, datefin);
+    Echange(requete, reponse);
 
 }

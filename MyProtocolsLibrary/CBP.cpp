@@ -198,8 +198,9 @@ void CBP_SEARCH_CONSULTATIONS(char*requete,char* reponse)
 
 // on recoit une requete du genre SEARCH_CONSULTATIONS#specialite#medecin#dateDebut#dateFin
 	//ON la dans le champ reponse, il va donc servir "en ecriture et en lecture"
-
+	printf("%s\n", requete);
 	char* ptr = strtok_r(requete,"#", &saveptr);
+		ptr = strtok_r(NULL,"#",&saveptr);
 		strcpy(specialite, ptr);
 		ptr = strtok_r(NULL,"#",&saveptr);
 		strcpy(medecin, ptr);
