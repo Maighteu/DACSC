@@ -134,7 +134,7 @@ printf("Connexion pointer : %p\n", connexion);
 	MYSQL_ROW ligne;
 
 	reponse[0] = '\0';
-	strcpy(reponse,"BOOK_CONSULTATIONS#ok#");
+	strcpy(reponse,"SEARCH_CONSULTATIONS#ok#");
     while((ligne = mysql_fetch_row(resultat)))
     {
         char tempLigne[256];

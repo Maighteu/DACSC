@@ -79,10 +79,11 @@ bool CBP(char* requete, char* reponse, const int socket)
 	}
 //rdv
 	////////////////////////
-	else if (strcmp(requete,"BOOK_CONSULTATIONS") == 0)
+	else if (strcmp(buffer,"BOOK_CONSULTATIONS") == 0)
 	{
 		if (CBP_BOOK_CONSULTATIONS(requete) == true)
 		{
+			printf("\n ici bana\n");
 			strcpy(reponse,"BOOK_CONSULTATIONS#ok#");
 		}
 		else
@@ -221,6 +222,8 @@ bool CBP_BOOK_CONSULTATIONS(char* buffer)
 	char *saveptr;
 
 	char* ptr = strtok_r(buffer,"#", &saveptr);
+		ptr = strtok_r(NULL,"#",&saveptr);
+
 		strcpy(idConsultation, ptr);
 		ptr = strtok_r(NULL,"#",&saveptr);
 		strcpy(idPatient, ptr);
@@ -228,7 +231,7 @@ bool CBP_BOOK_CONSULTATIONS(char* buffer)
 		strcpy(raison, ptr);
 		if (ReserverConsulation(idConsultation, idPatient, raison)==1)
 		{
-			 
+
 			return true;
 		}
 		else return false;

@@ -319,6 +319,7 @@ void MainWindowClientConsultationBooker::on_pushButtonReserver_clicked()
 
 void MainWindowClientConsultationBooker::Echange(char* requete, char* reponse)
 {
+    printf("\n\nRequete envoyee: %s \n\n", requete);
     int byteLu;
     if(Send(sClient,requete, strlen(requete)) == -1)
     {
@@ -417,7 +418,7 @@ void MainWindowClientConsultationBooker::addSearchConsultations()
     sprintf(requete, "SEARCH_CONSULTATIONS#%s#%s#%s#%s#", specialite, docteur, datedeb, datefin);
     Echange(requete, reponse);
     buffer = strtok(reponse, "#");
-    if (strcmp(buffer, "GET_CONSULTATIONS") == 0)
+    if (strcmp(buffer, "SEARCH_CONSULTATIONS") == 0)
     {
         buffer = strtok(NULL, "#");
         if(strcmp(buffer, "ok") == 0)
@@ -475,6 +476,7 @@ void MainWindowClientConsultationBooker::bookConsultation()
      sprintf(requete,"BOOK_CONSULTATIONS#%s#%d#%s#", id.toLocal8Bit().constData(), idPatient, raison.c_str());
      Echange(requete, reponse);
      buffer = strtok(reponse,"#");
+     printf("HEADER: %s", buffer);
      buffer = strtok(NULL, "#");
      if (strcmp(buffer,"ok") == 0) 
     {
