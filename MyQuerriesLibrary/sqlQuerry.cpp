@@ -1,5 +1,9 @@
 #include "sqlQuerry.h"
 
+///////////////////////////////////////
+//TO DO
+//Utiliser un mutex
+//////////////////////////////
 MYSQL * ConnexionBD()
 {
 	MYSQL *connexion = mysql_init(NULL);
@@ -130,7 +134,7 @@ printf("Connexion pointer : %p\n", connexion);
 	MYSQL_ROW ligne;
 
 	reponse[0] = '\0';
-	strcpy(reponse,"GET_CONSULTATIONS#ok#");
+	strcpy(reponse,"BOOK_CONSULTATIONS#ok#");
     while((ligne = mysql_fetch_row(resultat)))
     {
         char tempLigne[256];

@@ -259,6 +259,7 @@ void MainWindowClientConsultationBooker::on_pushButtonLogin_clicked()
     cout << "FirstName = " << firstName << endl;
     cout << "patientId = " << patientId << endl;
     cout << "newPatient = " << newPatient << endl;
+
     if (lastName == "") lastName = " ";
     if (firstName == "") firstName = " ";
     if (newPatient == false)
@@ -313,8 +314,6 @@ void MainWindowClientConsultationBooker::on_pushButtonRechercher_clicked()
 void MainWindowClientConsultationBooker::on_pushButtonReserver_clicked()
 {
 
-    int selectedTow = this->getSelectionIndexTableConsultations();
-    cout << "selectedRow = " << selectedTow << endl;
     bookConsultation();
 }
 
@@ -483,5 +482,4 @@ void MainWindowClientConsultationBooker::bookConsultation()
     }
      else dialogError("Booking", "Booking failed" );
      clearTableConsultations();
-     return;
 }

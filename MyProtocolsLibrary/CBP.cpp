@@ -87,7 +87,7 @@ bool CBP(char* requete, char* reponse, const int socket)
 		}
 		else
 		{
-			strcpy(reponse,"BOOK_CONSULTATIONS#ok#");
+			strcpy(reponse,"BOOK_CONSULTATIONS#ko#");
 
 		}
 		return true;
@@ -228,6 +228,7 @@ bool CBP_BOOK_CONSULTATIONS(char* buffer)
 		strcpy(raison, ptr);
 		if (ReserverConsulation(idConsultation, idPatient, raison)==1)
 		{
+			 
 			return true;
 		}
 		else return false;
