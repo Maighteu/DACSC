@@ -34,7 +34,7 @@ bool CBP(char* requete, char* reponse, const int socket)
 		else
 		{
 			sprintf(reponse, "LOGIN#ko#");
-			return false;
+			return true;
 		}
 	}
 

@@ -124,6 +124,7 @@ CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/mainwindowclientconsult
  /home/student/Documents/DACSC/ClientConsultationBookerQt/ui_mainwindowclientconsultationbooker.h
  /home/student/Documents/DACSC/MySocketLibrary/TCP.h
  /usr/include/qt5/QtCore/QDate
+ /usr/include/qt5/QtCore/QDebug
  /usr/include/qt5/QtCore/QVariant
  /usr/include/qt5/QtCore/qabstractitemmodel.h
  /usr/include/qt5/QtCore/qalgorithms.h

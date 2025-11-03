@@ -53,6 +53,8 @@ public:
     void addDoctors();
     void addSpecialties();
     void addSearchConsultations();
+    void bookConsultation();
+
 
 
 

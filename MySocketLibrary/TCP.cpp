@@ -63,7 +63,7 @@ int Accept(int sEcoute,char *ipClient)
   // accept on socket serv
   /////////////////////////////////////
   if ((sService = accept(sEcoute, (struct sockaddr*)&adrClient, & adrClientLen)) == -1) //(struct sockaddr*) permet de cast sockaddr_in en sockaddr pour le compilateur
-  									//Ici on ajoute l'ip client attendu par l'accept dans adrClient
+  //Ici on ajoute l'ip client attendu par l'accept dans adrClient
   {
   		perror("Erreur d'accept serv, accept()"); 
   		exit(2);

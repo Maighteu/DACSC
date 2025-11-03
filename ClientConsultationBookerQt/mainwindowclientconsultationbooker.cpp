@@ -5,6 +5,8 @@
 #include <iostream>
 #include "../MySocketLibrary/TCP.h"
 #include <unistd.h>
+#include <QDebug>
+
 using namespace std;
 int sClient;
 
@@ -257,6 +259,8 @@ void MainWindowClientConsultationBooker::on_pushButtonLogin_clicked()
     cout << "FirstName = " << firstName << endl;
     cout << "patientId = " << patientId << endl;
     cout << "newPatient = " << newPatient << endl;
+    if (lastName == "") lastName = " ";
+    if (firstName == "") firstName = " ";
     if (newPatient == false)
     {
         sprintf(requete,"LOGIN#OLD#%s#%s#%d#", lastName.c_str(), firstName.c_str(), patientId);
@@ -290,6 +294,8 @@ void MainWindowClientConsultationBooker::on_pushButtonLogout_clicked()
 
 void MainWindowClientConsultationBooker::on_pushButtonRechercher_clicked()
 {
+        clearTableConsultations();
+
     char requete [500];
 
     string specialty = this->getSelectionSpecialty();
@@ -306,11 +312,10 @@ void MainWindowClientConsultationBooker::on_pushButtonRechercher_clicked()
 
 void MainWindowClientConsultationBooker::on_pushButtonReserver_clicked()
 {
-     char requete [256];
 
     int selectedTow = this->getSelectionIndexTableConsultations();
-    sprintf(requete, "BOOK_CONSULTATIONS");
     cout << "selectedRow = " << selectedTow << endl;
+    bookConsultation();
 }
 
 void MainWindowClientConsultationBooker::Echange(char* requete, char* reponse)
@@ -400,6 +405,8 @@ void MainWindowClientConsultationBooker::addSearchConsultations()
 {
      char requete [200], reponse[800];
     char specialite[20], docteur[30], datedeb[12],datefin[12];
+    int id;
+    string specialty, doctor, date, hour;
     char* buffer;
     strcpy(specialite, getSelectionSpecialty().c_str());
     strcpy(docteur, getSelectionDoctor().c_str());
@@ -410,5 +417,71 @@ void MainWindowClientConsultationBooker::addSearchConsultations()
 
     sprintf(requete, "SEARCH_CONSULTATIONS#%s#%s#%s#%s#", specialite, docteur, datedeb, datefin);
     Echange(requete, reponse);
+    buffer = strtok(reponse, "#");
+    if (strcmp(buffer, "GET_CONSULTATIONS") == 0)
+    {
+        buffer = strtok(NULL, "#");
+        if(strcmp(buffer, "ok") == 0)
+        {
+            while(true)
+            {
+                buffer = strtok(NULL, "#");
+                if (buffer == NULL) break;
+                id = atoi(buffer);
+                buffer = strtok(NULL, "#");
+                if (buffer == NULL) break;
+                specialty = buffer;
+                buffer = strtok(NULL, "#");
+                if (buffer == NULL) break;
+                doctor = buffer;
+                buffer = strtok(NULL, "#");
+                if (buffer == NULL) break;
+                date = buffer;
+                buffer = strtok(NULL, "#");
+                if (buffer == NULL) break;
+                hour = buffer;
+                addTupleTableConsultations(id, specialty, doctor, date, hour);
+            }
+        }
+    }
+    else
+    {
+        printf("\n GET_SPECIALTIES non detecte");
+        return;
+    }
 
+}
+void MainWindowClientConsultationBooker::bookConsultation()
+{
+    char requete [500], reponse[200];
+    int idPatient = getPatientId();
+    char* buffer;
+    string raison;
+    QTableWidgetItem *item = new QTableWidgetItem;
+    QString id;
+
+    int row = this->getSelectionIndexTableConsultations();
+    
+    if (row >= 0) {
+    id = ui->tableWidgetConsultations->item(row, 0)->text(); 
+    }
+    else {
+      dialogError("Booking", "aucune ligne selectionee" );
+        return;
+    }
+    printf("id patient: %d\n", idPatient);
+
+     raison = dialogInputText("Raison", "Inserer la raison du rdv");
+     bool ok = false;
+     sprintf(requete,"BOOK_CONSULTATIONS#%s#%d#%s#", id.toLocal8Bit().constData(), idPatient, raison.c_str());
+     Echange(requete, reponse);
+     buffer = strtok(reponse,"#");
+     buffer = strtok(NULL, "#");
+     if (strcmp(buffer,"ok") == 0) 
+    {
+        dialogMessage("Booking", "Booking done" );
+    }
+     else dialogError("Booking", "Booking failed" );
+     clearTableConsultations();
+     return;
 }

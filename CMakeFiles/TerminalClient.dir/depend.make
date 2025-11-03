@@ -123,6 +123,7 @@ CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/mainwindowclientconsult
 CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/mainwindowclientconsultationbooker.cpp.o: ClientConsultationBookerQt/ui_mainwindowclientconsultationbooker.h
 CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/mainwindowclientconsultationbooker.cpp.o: MySocketLibrary/TCP.h
 CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/mainwindowclientconsultationbooker.cpp.o: /usr/include/qt5/QtCore/QDate
+CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/mainwindowclientconsultationbooker.cpp.o: /usr/include/qt5/QtCore/QDebug
 CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/mainwindowclientconsultationbooker.cpp.o: /usr/include/qt5/QtCore/QVariant
 CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/mainwindowclientconsultationbooker.cpp.o: /usr/include/qt5/QtCore/qabstractitemmodel.h
 CMakeFiles/TerminalClient.dir/ClientConsultationBookerQt/mainwindowclientconsultationbooker.cpp.o: /usr/include/qt5/QtCore/qalgorithms.h

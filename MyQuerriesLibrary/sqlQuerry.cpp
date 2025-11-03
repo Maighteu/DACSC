@@ -69,7 +69,7 @@ void rechercheConsultation(char *reponse, const char *specialite, const char *me
     if(strcmp(prenomMedecin, "%") ==0)
     {
     	printf("in if \n");
-	    strcpy(nomMedecin,"%");
+		nomMedecin = strdup(token);
 	}
 	else
 	{
